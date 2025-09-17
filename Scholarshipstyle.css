@@ -1,0 +1,862 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #e3f2fd, #e1bee7);
+  color: #333;
+}
+
+/* Navbar */
+nav {
+  background: #4a148c;
+  color: white;
+  padding: 14px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 16px rgba(74,20,140,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  z-index: 100;
+}
+
+nav h1 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-right: 22px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: color 0.3s;
+}
+
+/* Menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  margin: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-bottom 0.3s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: #ffca28;
+  border-bottom: 2px solid #ffca28;
+}
+
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.menu-toggle:active {
+  color: #ffca28;
+  transform: scale(1.1);
+}
+
+/* Hero */
+.hero {
+  height: 300px;
+  background: url('https://hips.hearstapps.com/hmg-prod/images/graduation-captions-lead-image-6412222f98500.jpg?crop=1xw:0.8423586572438162xh;0,0') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 10px;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+}
+
+/* Filter */
+.filter {
+  text-align: center;
+  padding: 30px;
+}
+
+.filter select {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #4a148c;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter select:hover {
+  background: #f3e5f5;
+}
+
+/* Scholarship Cards */
+.scholarships {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 12px 20px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+  color: #4a148c;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: #4a148c;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #6a1b9a;
+}
+
+/* About */
+.about {
+  padding: 50px 20px;
+  background: #f3e5f5;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 15px;
+  color: #4a148c;
+}
+
+/* Footer */
+footer {
+  background: #4a148c;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 992px) {
+  .highlight-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .scholarships {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+  .reviews > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 10px 12px;
+  }
+  nav h1 {
+    font-size: 1.08rem;
+    margin-right: 10px;
+  }
+  nav ul {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    padding: 8px 4px;
+  }
+  nav h1 {
+    font-size: 0.98rem;
+    margin-right: 0;
+  }
+  .menu-toggle {
+    display: block;
+    margin-left: 0;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #6a1b9a;
+    position: absolute;
+    top: 48px;
+    right: 0;
+    width: 160px;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    z-index: 1000;
+    gap: 0;
+  }
+  nav ul.active {
+    display: flex !important;
+  }
+  nav ul li {
+    margin: 0 0 6px 0;
+  }
+  nav ul li:last-child {
+    margin-bottom: 0;
+  }
+  nav ul li a {
+    font-size: 0.98rem;
+    padding: 4px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 10px 8px;
+  }
+  nav h1 {
+    font-size: 1.1rem;
+  }
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+  .hero {
+    height: 48vh;
+  }
+  .scholarships {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 6px;
+  }
+  .highlight-cards {
+    gap: 8px;
+    margin: 10px auto;
+  }
+  .reviews > div {
+    flex-direction: column;
+    gap: 8px !important;
+  }
+  .card {
+    min-width: 120px !important;
+    max-width: 100% !important;
+    font-size: 0.98rem;
+  }
+  .state-scholarships {
+    padding: 10px;
+  }
+  .about {
+    padding: 20px 8px;
+  }
+}
+
+/* Highlight Cards */
+.highlight-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 40px auto;
+  max-width: 1100px;
+}
+
+.highlight-card {
+  position: relative;
+  flex: 1 1 300px;
+  background: linear-gradient(135deg, #f9f9ff, #eef3ff);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, background 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #4e54c8, #8f94fb); /* same as navbar */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  color: white; /* makes text visible on gradient */
+  z-index: 10;
+}
+
+.highlight-card:hover h3,
+.highlight-card:hover p {
+  color: #fff; /* Ensure text is readable */
+}
+
+/* Dropdown List */
+.dropdown-list {
+  display: none;
+  list-style: none;
+  margin-top: 18px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 1002;
+}
+
+.highlight-card:hover .dropdown-list {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown-list a {
+  display: block;
+  padding: 10px 15px;
+  color: #004aad;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown-list a:hover {
+  background: #f0f4ff;
+  color: #000;
+  border-radius: 8px;
+}
+
+
+/* Hero Section with Slider */
+.hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+}
+
+.slider {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Gradient shading effect at bottom */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 30%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(249,249,249,1) 100%);
+  pointer-events: none;
+}
+
+/* Hero Text */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  padding: 20px 30px;
+  border-radius: 12px;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .navbar ul {
+    flex-direction: column;
+    background: #0066cc;
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    text-align: center;
+    transition: left 0.4s ease;
+  }
+
+  .navbar ul.active {
+    left: 0;
+  }
+
+  .navbar li {
+    margin: 15px 0;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+    padding: 15px 20px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    height: 50vh;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    font-size: 1rem;
+  }
+
+  .dropdown-content {
+    width: 100%;
+    left: 0;
+  }
+}
+/* State Scholarships Section */
+.state-scholarships {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.state-scholarships::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 220px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/India_Map_Vector.svg') no-repeat center/contain;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+.state-scholarships > * {
+  position: relative;
+  z-index: 1;
+}
+
+.state-scholarships h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #004aad;
+}
+
+/* Outer Border Box */
+.state-box {
+  border: 2px solid #4a148c;
+  border-radius: 18px;
+  padding: 32px 24px 28px 24px;
+  background: linear-gradient(135deg, #f3e5f5 60%, #e1bee7 100%);
+  box-shadow: 0 6px 24px rgba(74,20,140,0.10), 0 1.5px 6px rgba(74,20,140,0.08);
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 18px;
+  transition: box-shadow 0.3s;
+}
+
+.state-box:hover {
+  box-shadow: 0 10px 32px rgba(74,20,140,0.18), 0 2px 8px rgba(74,20,140,0.10);
+}
+
+.state-box label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 14px;
+  font-size: 1.18rem;
+  color: #4a148c;
+  letter-spacing: 0.5px;
+}
+
+/* Dropdown Styling */
+.state-box select {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1.08rem;
+  border-radius: 10px;
+  border: 2px solid #b39ddb;
+  outline: none;
+  background: #fff url('data:image/svg+xml;utf8,<svg fill="%234a148c" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 16px center/20px 20px;
+  appearance: none;
+  transition: border 0.3s, box-shadow 0.3s;
+  box-shadow: 0 1.5px 6px rgba(74,20,140,0.06);
+  cursor: pointer;
+}
+
+.state-box select:focus, .state-box select:hover {
+  border-color: #4a148c;
+  box-shadow: 0 0 0 2px #e1bee7;
+  background-color: #f3e5f5;
+}
+
+/* Reviews Section */
+.reviews {
+  background: #181828;
+  padding: 40px 0;
+  transition: background 0.3s;
+}
+
+/* Dark mode for reviews section */
+.dark-mode .reviews {
+  background: #181828;
+}
+
+.reviews .review-card {
+  transition: background 0.3s, color 0.3s;
+}
+
+.reviews .review-card:hover {
+  background: #4a148c;
+  color: #fff;
+}
+
+.reviews .review-card:hover h3,
+.reviews .review-card:hover p {
+  color: #fff;
+}
+
+.reviews .review-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 2px solid #4a148c;
+  transition: border 0.3s;
+}
+
+.reviews .review-card:hover .review-img {
+  border: 2px solid #fff;
+}
+
+.scholarship-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: #f3e5f5;
+  box-shadow: 0 2px 8px rgba(74,20,140,0.08);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* State Arrow Animation */
+.state-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+}
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --nav-bg: #4a148c;
+  --nav-text: #ffffff;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0,0,0,0.1);
+  --highlight-bg: linear-gradient(to right, #e3f2fd, #e1bee7);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--highlight-bg);
+  color: var(--text-color);
+}
+
+/* Navbar */
+nav {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  box-shadow: 0px 6px 12px var(--card-shadow);
+}
+
+/* Dark mode button */
+.theme-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--nav-text);
+  transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+  transform: rotate(20deg);
+}
+/* 🌙 Dark Mode Theme */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --nav-bg: #222;
+  --nav-text: #ffca28;
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(255,255,255,0.05);
+  --highlight-bg: linear-gradient(to right, #1a1a1a, #2c2c2c);
+}
+/* 🌙 Dark Mode Complete Styling */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --nav-bg: #1e1e1e;
+  --nav-text: #ffca28;
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(255, 255, 255, 0.08);
+  --highlight-bg: linear-gradient(to right, #1a1a1a, #2c2c2c);
+}
+
+/* Body + Sections */
+.dark-mode body {
+  background: var(--highlight-bg);
+  color: var(--text-color);
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode label,
+.dark-mode small {
+  color: var(--text-color) !important;
+}
+
+/* Navbar */
+.dark-mode nav {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+}
+
+.dark-mode nav h1 {
+  color: var(--nav-text);
+}
+
+.dark-mode nav ul li a {
+  color: var(--nav-text);
+}
+
+.dark-mode nav ul li a:hover {
+  color: #90caf9; /* light blue highlight */
+  border-bottom: 2px solid #90caf9;
+}
+
+/* Cards */
+.dark-mode .card {
+  background: var(--card-bg);
+  box-shadow: 0px 6px 12px var(--card-shadow);
+  color: var(--text-color);
+}
+
+/* Buttons */
+.dark-mode .btn {
+  background: #ffca28;
+  color: #121212;
+}
+
+.dark-mode .btn:hover {
+  background: #ffd54f;
+  color: #000;
+}
+
+/* Highlight Cards */
+.dark-mode .highlight-card {
+  background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
+  color: var(--text-color);
+}
+
+.dark-mode .highlight-card:hover {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: #fff;
+}
+
+/* Dropdown (State Select Box) */
+.dark-mode .state-box {
+  background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
+  border: 2px solid #666;
+}
+
+.dark-mode .state-box label {
+  color: #ffca28;
+}
+
+.dark-mode .state-box select {
+  background: #1e1e1e;
+  color: var(--text-color);
+  border: 2px solid #666;
+}
+
+.dark-mode .state-box select:focus {
+  border-color: #ffca28;
+  background-color: #2c2c2c;
+}
+
+/* Reviews */
+.dark-mode .review-card {
+  background: #1e1e1e;
+  color: var(--text-color);
+}
+
+.dark-mode .review-card:hover {
+  background: #333;
+  color: #fff;
+}
+
+.dark-mode .review-img {
+  border: 2px solid #ffca28;
+}
+
+/* Footer */
+.dark-mode footer {
+  background: #1e1e1e;
+  color: #ffca28;
+}
+
+/* Progress Bar */
+.dark-mode .progress-container {
+  background: #333;
+}
+
+.dark-mode .progress-bar {
+  opacity: 0.9;
+}
+
+/* Dropdown List under Highlight Cards */
+.dark-mode .dropdown-list {
+  background: #2a2a2a;
+  border: 1px solid #555;
+}
+
+.dark-mode .dropdown-list a {
+  color: #ffca28;
+}
+
+.dark-mode .dropdown-list a:hover {
+  background: #3c3c3c;
+  color: #fff;
+}
+
+/* Dark/Light Mode Toggle Button */
+.theme-btn {
+  background: linear-gradient(90deg, #ffca28 0%, #4a148c 100%);
+  border: none;
+  font-size: 1.08rem;
+  font-weight: 700;
+  padding: 10px 26px;
+  border-radius: 24px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 18px;
+  box-shadow: 0 2px 8px rgba(74,20,140,0.13);
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  outline: none;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+.theme-btn:hover, .theme-btn:focus {
+  background: linear-gradient(90deg, #4a148c 0%, #ffca28 100%);
+  color: #222;
+  transform: scale(1.06);
+  box-shadow: 0 4px 16px rgba(74,20,140,0.18);
+}
+
+/* Dark mode button style */
+.dark-mode .theme-btn {
+  background: linear-gradient(90deg, #222 0%, #ffca28 100%);
+  color: #ffca28;
+}
+
+.dark-mode .theme-btn:hover, .dark-mode .theme-btn:focus {
+  background: linear-gradient(90deg, #ffca28 0%, #222 100%);
+  color: #222;
+}

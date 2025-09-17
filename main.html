@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CodeZ</title>
+  <link rel="stylesheet" href="stylemain.css">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Features Carousel</title>
+  <style>
+    body {
+      background: #111827;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    section {
+      position: relative;
+      padding: 3rem 1rem;
+      overflow: hidden;
+    }
+    .carousel-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1.5rem;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.7s ease-in-out;
+    }
+    .slide {
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem;
+      background: linear-gradient(to bottom right, #1f2937, #111827);
+      border-radius: 1rem;
+    }
+    .slide img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 2px solid #374151;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+    .slide h3 {
+      font-size: 1.8rem;
+      color: #93c5fd;
+    }
+    .slide p {
+      margin-top: 0.5rem;
+      color: #d1d5db;
+    }
+    .slide a {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #6366f1;
+      border-radius: 999px;
+      color: #93c5fd;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .slide a:hover {
+      background: #6366f1;
+      color: #fff;
+    }
+    .controls {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #4b5563;
+      border: none;
+      cursor: pointer;
+      transition: width 0.3s;
+    }
+    .dot.active {
+      width: 30px;
+      background: #6366f1;
+      border-radius: 10px;
+    }
+    .nav-btns {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .nav-btn {
+      background: #1f2937;
+      border: 1px solid #374151;
+      color: #fff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .nav-btn:hover {
+      background: #374151;
+    }
+    @media(max-width: 768px) {
+      .slide {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>CodeZ</h1>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul id="menu">
+      <li><a href="codeZ.html">Home</a></li>
+      <li><a href="#">Careers</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="scholarship.html">Scholarships</a></li>
+      <li><a href="#login">Login</a></li>
+      <li><a href="#signup">Signup</a></li>
+      <li>
+        <!-- 🌗 Dark Mode Toggle -->
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h2>Welcome to CodeZ</h2>
+      <p>Your one-stop platform for Careers, Courses, and Scholarships.</p>
+      <a href="#careers" class="btn">Get Started</a>
+    </div>
+  </section>
+<section aria-label="Feature highlights">
+  <div class="carousel-container">
+    <header>
+      <div>
+        <h2>Discover your path</h2>
+        <p style="color:#9ca3af;">Smart guidance across careers, courses, and scholarships.</p>
+      </div>
+      <div class="nav-btns">
+        <button class="nav-btn" onclick="prevSlide()">&#8592;</button>
+        <button class="nav-btn" onclick="nextSlide()">&#8594;</button>
+      </div>
+    </header>
+
+    <!-- slides -->
+    <div class="slides" id="slides">
+      <div class="slide">
+        <div><img src="carousel1.svg" alt="Career Quizzes"></div>
+        <div>
+          <h3>Career Quizzes</h3>
+          <p>Our interactive quizzes help you discover your strengths and interests to find the perfect career path.</p>
+          <a href="#">Learn more →</a>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div><img src="carousel2.svg" alt="Course Guidance"></div>
+        <div>
+          <h3>Course Guidance</h3>
+          <p>Explore a curated list of courses and educational programs that align with your career goals.</p>
+          <a href="courses.html">Learn more →</a>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div><img src="carousel3.svg" alt="Scholarship Search"></div>
+        <div>
+          <h3>Scholarship Search</h3>
+          <p>Discover scholarships and financial aid opportunities to make your educational dreams a reality.</p>
+          <a href="scholarship.html">Learn more →</a>
+        </div>
+      </div>
+    </div>
+   
+<!-- FAQ Section -->
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <p class="faq-subtitle">Quick answers to common questions about StudentSathi.</p>
+  
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <button class="faq-question">1. How can I find the right career path?</button>
+      <div class="faq-answer">
+        <p>Take our guided Career Quizzes. We analyze your interests, skills, and personality to match you with suitable career domains, then suggest next steps and curated resources.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">2. Are the courses listed on StudentSathi free?</button>
+      <div class="faq-answer">
+        <p>We aggregate both free and paid courses. Filters let you choose by budget, level, duration, and learning goals so you can pick what works best for you.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">3. How do I search for scholarships?</button>
+      <div class="faq-answer">
+        <p>Use our scholarship finder with filters for academic level, location, category, eligibility, deadlines, and more—so you quickly discover opportunities you qualify for.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+    <!-- dots -->
+    <div class="controls" id="dots">
+      <button class="dot active" onclick="goToSlide(0)"></button>
+      <button class="dot" onclick="goToSlide(1)"></button>
+      <button class="dot" onclick="goToSlide(2)"></button>
+    </div>
+  </div>
+</section>
+
+<script>
+  let index = 0;
+  const slides = document.getElementById("slides");
+  const dots = document.querySelectorAll(".dot");
+
+  function updateCarousel() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d,i)=>d.classList.toggle("active", i===index));
+  }
+  function nextSlide() {
+    index = (index + 1) % 3;
+    updateCarousel();
+  }
+  function prevSlide() {
+    index = (index - 1 + 3) % 3;
+    updateCarousel();
+  }
+  function goToSlide(i) {
+    index = i;
+    updateCarousel();
+  }
+
+  // auto play
+  setInterval(nextSlide, 4500);
+</script>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 CodeZ | All Rights Reserved</p>
+  </footer>
+
+  <!-- JS -->
+  <script>
+    // Menu toggle for mobile
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+
+    // Dark mode logic (reusing style.css)
+    const themeToggle = document.getElementById('theme-toggle');
+    function setTheme(mode) {
+      if (mode === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        themeToggle.textContent = '☀️';
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark-mode');
+        themeToggle.textContent = '🌙';
+        localStorage.setItem('theme', 'light');
+      }
+    }
+    themeToggle.onclick = function() {
+      setTheme(document.documentElement.classList.contains('dark-mode') ? 'light' : 'dark');
+    };
+    setTheme(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+  </script>
+  <script>
+  document.querySelectorAll(".faq-question").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const item = btn.parentElement;
+      item.classList.toggle("active");
+    });
+  });
+</script>
+
+
+</body>
+</html>
