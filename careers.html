@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers Portal</title>
+  <link rel="stylesheet" href="Careerstyle.css">
+</head>
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>Student Sarthi</h1>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul id="menu">
+      <li><a href="main.html">Home</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="scholarship.html">Scholarships</a></li>
+      <button id="theme-toggle" class="theme-btn">🌙</button>
+    </ul>
+  </nav>
+
+<!-- Hero Section -->
+<section class="hero">
+  <div class="slider">
+    <div class="slide active" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/29/03/53/startup-1869490_1280.jpg');"></div>
+    <div class="slide" style="background-image: url('https://cdn.pixabay.com/photo/2015/01/08/18/25/startup-593327_1280.jpg');"></div>
+    <div class="slide" style="background-image: url('https://cdn.pixabay.com/photo/2016/03/26/22/20/businessman-1284465_1280.jpg');"></div>
+  </div>
+  <div class="hero-text">
+    <h2>Discover Your Career Path</h2>
+    <p>Explore career opportunities, exams, and future prospects.</p>
+   <div style="display:flex; gap:20px; justify-content:center; flex-wrap:wrap; margin-top:20px;">
+  <button class="hero-btn" onclick="goToCareer('career-10th')">Careers After 10th</button>
+  <button class="hero-btn" onclick="goToCareer('career-12th')">Careers After 12th</button>
+</div>
+
+  </div>
+</section>
+
+  <!-- Career Categories -->
+  <section class="highlight-cards">
+    <div class="highlight-card">
+      <h3>💻 IT & Computer Science</h3>
+      <p>Careers in software, AI, cybersecurity, and development.</p>
+      <ul class="dropdown-list">
+        <li><a href="https://www.indeed.com/career-advice/finding-a-job/software-developer-career-paths">Software Developer</a></li>
+        <li><a href="https://www.coursera.org/in/articles/what-is-a-data-scientist">Data Scientist</a></li>
+        <li><a href="https://www.coursera.org/in/articles/cybersecurity-analyst-salary">Cybersecurity Analyst</a></li>
+      </ul>
+    </div>
+    <div class="highlight-card">
+      <h3>⚕️ Medical & Health</h3>
+      <p>Careers in medicine, pharmacy, and healthcare.</p>
+      <ul class="dropdown-list">
+        <li><a href="https://www.foundit.in/career-advice/career-options-after-mbbs/">Doctor (MBBS, MD)</a></li>
+        <li><a href="https://www.shiksha.com/medicine-health-sciences/paramedical-courses-career-chp">Nursing & Paramedics</a></li>
+        <li><a href="https://krupanidhi.edu.in/blog/career-scope-of-pharmacy-in-india/">Pharmacist</a></li>
+      </ul>
+    </div>
+    <div class="highlight-card">
+      <h3>📊 Management & Business</h3>
+      <p>Careers in business, startups, and management roles.</p>
+      <ul class="dropdown-list">
+        <li><a href="https://www.shiksha.com/mba-masters-of-business-administration-career-chp">MBA</a></li>
+        <li><a href="https://www.shiksha.com/business-management-studies/entrepreneurship-courses-chp">Entrepreneurship</a></li>
+        <li><a href="https://www.shiksha.com/accounting-commerce/articles/ca-salary-in-india-blogId-164219">Chartered Accountant</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Career Search -->
+  <section style="text-align:center; margin: 30px 0;">
+    <input type="text" id="career-search" placeholder="Search careers..." 
+      style="padding:10px 18px; border-radius:8px; border:1.5px solid #4a148c; width: 260px; font-size:1rem;">
+  </section>
+
+<section class="journey-section" aria-label="Career Journey Map" id="career-10th">
+  <h2 class="journey-title">Career Pathways After 10th</h2>
+  <p class="journey-sub">Explore the various career options after completing Class 10th across streams and sectors.</p>
+
+  <div class="journey-line-vertical">
+
+    <!-- Node 1: Class 10th -->
+    <div class="journey-node root">
+      <div class="content">
+        <h3>Class 10th</h3>
+        <p>Starting point for career pathways. Choose between generalized and stream-specific routes.</p>
+      </div>
+    </div>
+
+    <!-- Node 2: Generalized Pathways -->
+    <div class="journey-node">
+      <div class="content">
+        <h3>Generalized Pathways</h3>
+
+        <details>
+          <summary>Entrepreneurship (Starting a Business)</summary>
+          <p><em>(Common for both 10th & 12th)</em> Since formal degrees aren't required, you will need to actively develop your business acumen through other channels.</p>
+          <ul>
+            <li>Learning by mistakes</li>
+            <li>Mentor Guidance</li>
+            <li>Online Resources</li>
+          </ul>
+          <p><strong>Requirements:</strong></p>
+          <ul>
+            <li>Business Ideas</li>
+            <li>Business Plan</li>
+            <li>Business Skills</li>
+            <li>Funding</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Jobs in Public Sector</summary>
+          <p>Opportunities in railways, defence, and paramilitary services.</p>
+          <h4>Railways</h4>
+          <ul>
+            <li>RPF Constable: Rs. 21,700/- per month</li>
+            <li>RRB ALP Exam: Rs. 19,900/- per month</li>
+            <li>RRB Group D: Rs. 18,000/- per month</li>
+          </ul>
+          <h4>Defence</h4>
+          <ul>
+            <li>Indian Army Soldier/Tradesman Rally: Rs. 30,000/- per month</li>
+            <li>Indian Navy MR Exam: Rs. 30,000/- per month</li>
+          </ul>
+          <h4>Paramilitary Forces</h4>
+          <ul>
+            <li>Constable: Rs. 21,700/-</li>
+            <li>Bugler/Musician Posts: Rs. 21,700/-</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Jobs in Private Sector</summary>
+          <ul>
+            <li>Sales & Marketing: Sales Executive, Telecaller, Delivery Executive</li>
+            <li>Product Maintenance: Technician Helper, Mechanic Assistant</li>
+            <li>Other Jobs: Data Entry Operator, Office Boy, Call Center/BPO</li>
+          </ul>
+        </details>
+
+      </div>
+    </div>
+
+    <!-- Node 3: Stream-Specific Pathways -->
+    <div class="journey-node">
+      <div class="content">
+        <h3>Stream-Specific Pathways</h3>
+
+        <details>
+          <summary>Medical</summary>
+          <ul>
+            <li>Receptionist: Rs. 15,000/-</li>
+            <li>Lab Assistant: Rs. 18,000/-</li>
+            <li>Pharmacy Assistant: Rs. 13,000/-</li>
+            <li>Patient Attendant: Rs. 18,000/-</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Non-Medical Science</summary>
+          <ul>
+            <li>Technical & Engineering Support Jobs</li>
+            <li>Computer & IT Jobs</li>
+            <li>Electronics & Repair Jobs</li>
+            <li>Freelancing & Self-Employment (Tech Focused)</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Commerce</summary>
+          <ul>
+            <li>Cashier / Billing Assistant: Rs. 10,000/-</li>
+            <li>Field Sales Executive: Rs. 12,000/-</li>
+            <li>E-commerce Reselling</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>Arts & Humanities</summary>
+          <ul>
+            <li>Creative Fields: Rs. 8,000/-</li>
+            <li>Teaching & Education Support: Rs. 6,000/-</li>
+            <li>Arts, Craft & Cultural Work: Rs. 8,000/-</li>
+          </ul>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+<!-- ===== Class 12th Career Section ===== -->
+<section class="journey-section" id="career-12th">
+  <h2 class="journey-title">Career Pathways After 12th</h2>
+  <p class="journey-sub">Explore the various career options after completing Class 12th across streams and sectors.</p>
+
+  <div class="journey-line-vertical">
+
+    <!-- Node 1: Generalized Career Pathways -->
+    <div class="journey-node root highlight">
+      <div class="content">
+        <h3>Generalized Career Pathways</h3>
+        <details>
+          <summary>1. Entrepreneurship</summary>
+          <p>Pursue your own business ideas and ventures, leveraging innovative skills and market understanding.</p>
+        </details>
+        <details>
+          <summary>2. Jobs in Public Sector</summary>
+          <p>After class 12, several government jobs are available:</p>
+          <ul>
+            <li><strong>Indian Army:</strong> NDA selection, fitness & medical tests, written exam; posts like Soldier General Duty, Technical, Tradesman, Clerk; starting salary Rs. 28,000.</li>
+            <li><strong>Indian Air Force:</strong> Agniveer Vayu Exam for posts like Cook, Painter, Carpenter; starting salary Rs. 21,700.</li>
+            <li><strong>Staff Selection Commission (SSC):</strong> Jobs as Clerk, Junior Assistant, Data Entry Operator, Constable (BSF, CRPF, CISF); starting salary Rs. 18,000.</li>
+            <li><strong>State PCS Exam:</strong> State-level exam; posts like DSP, SDM, Tehsildar, Labour officer through Prelims → Mains → Interview; starting salary Rs. 50,000.</li>
+          </ul>
+        </details>
+        <details>
+          <summary>3. Jobs in Private Sector</summary>
+          <ul>
+            <li>Sales & Marketing: Sales Executive, Telecaller, Delivery Executive</li>
+            <li>Product Maintenance: Technician Helper, Mechanic Assistant</li>
+            <li>Other Jobs: Data Entry Operator, Office Boy, Call Center/BPO</li>
+          </ul>
+        </details>
+      </div>
+    </div>
+
+    <!-- Node 2: Stream-Specific Pathways -->
+    <div class="journey-node">
+      <div class="content">
+        <h3>Stream-Specific Pathways</h3>
+
+        <details>
+          <summary>1. Career Pathways After 12th (Medical)</summary>
+          <ul>
+            <li><strong>Paramedical & Allied Health:</strong> Institutes like Apollo, Fortis, Manipal; jobs as Lab Technician, OT Technician, Radiographer; starting salary Rs. 20,000.</li>
+            <li><strong>Clinical Research Associate:</strong> Senior research associate, clinical data manager, research scientist; requires Biology; starting salary Rs. 22,000.</li>
+            <li><strong>Healthcare & Medical Tourism Coordinator:</strong> Hospital role requiring communication skills & basic foreign language; salary from Rs. 20,000; future growth in hospital administration.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>2. Career Pathways After 12th (Non-Medical Science)</summary>
+          <ul>
+            <li><strong>Merchant Navy:</strong> IMU CET + company exams; roles as Deck Cadet, Engine Cadet; future officer ranks; starting salary Rs. 30,000.</li>
+            <li><strong>Commercial Pilot License:</strong> DGCA + flying school exams; pilot in private airlines; starting salary Rs. 1,50,000.</li>
+            <li><strong>Architecture & Design:</strong> Private design schools; jobs as Interior Designer, Architect Assistant; B.Arch optional; starting salary Rs. 20,000.</li>
+            <li><strong>Private IT/Engineering Exams with Job Tie-ups:</strong> Exams like TCS iON, Infosys Edge, Wipro TalentNext, Cognizant Skill-based hiring; roles as software engineer or analyst; aptitude + interview.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>3. Career Pathways After 12th (Commerce)</summary>
+          <ul>
+            <li><strong>Private Bank PO Exams:</strong> Entrance + training; job as Relationship Manager; starting salary Rs. 22,000.</li>
+            <li><strong>Chartered Financial Exams:</strong> CA, CFA, ACCA, CIMA; opportunities in Big 4 firms like KPMG.</li>
+            <li><strong>Marketing & Advertising Executive:</strong> Marketing assistant, ad campaign executive; starting salary Rs. 20,000; growth to Brand Manager, Marketing Head, CMO.</li>
+          </ul>
+        </details>
+
+        <details>
+          <summary>4. Career Pathways After 12th (Arts & Humanities)</summary>
+          <ul>
+            <li><strong>Mass Communication & Media Institutes:</strong> Jobs as journalist, PR executive, Media Manager; decent salary.</li>
+            <li><strong>NGO & Social Work Assistant:</strong> Field worker, project assistant; direct recruitment.</li>
+            <li><strong>Photography & Film Production:</strong> FTII entrance or apprenticeships; roles as photographer, assistant, cinematographer; future growth to director or production house owner.</li>
+            <li><strong>Radio Jockey (RJ) & Voice Artist:</strong> Skill-based selection via auditions; roles as RJ, dubbing artist, voice artist, voice-over specialist.</li>
+          </ul>
+        </details>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+  <!-- Reviews -->
+  <section class="reviews">
+    
+    <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:24px;">
+      <div class="card review-card">
+        <img src="https://randomuser.me/api/portraits/women/40.jpg" alt="User" class="review-img">
+        <h3>Sneha Gupta</h3>
+        <p>"The careers section guided me towards choosing computer science!"</p>
+      </div>
+      <div class="card review-card">
+        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="User" class="review-img">
+        <h3>Amit Sharma</h3>
+        <p>"I discovered MBA opportunities I didn’t know about. Helpful platform!"</p>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- About -->
+  <section class="about">
+    <h2>About Careers Section</h2>
+    <p>We provide career insights, exam preparation resources, and guidance for students to make informed decisions about their future.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Careers Portal | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("active");
+    }
+
+    function scrollToHighlights() {
+      const section = document.querySelector('.highlight-cards');
+      if(section) section.scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Hero slider
+    let slideIndex = 0;
+    const slides = document.querySelectorAll(".slide");
+    function showSlides() {
+      slides.forEach((s,i)=>s.classList.remove("active"));
+      slideIndex = (slideIndex + 1) % slides.length;
+      slides[slideIndex].classList.add("active");
+    }
+    setInterval(showSlides, 4000);
+
+    // Search careers
+    document.getElementById('career-search').addEventListener('input', function() {
+      const query = this.value.toLowerCase();
+      document.querySelectorAll('#career-list .card').forEach(card => {
+        const text = card.innerText.toLowerCase();
+        card.style.display = text.includes(query) ? 'block' : 'none';
+      });
+    });
+
+    // Dark Mode
+    const themeToggle = document.getElementById('theme-toggle');
+    function setTheme(mode) {
+      if (mode === 'dark') {
+        document.documentElement.classList.add('dark-mode');
+        localStorage.setItem('theme', 'dark');
+      } else {
+        document.documentElement.classList.remove('dark-mode');
+        localStorage.setItem('theme', 'light');
+      }
+    }
+    themeToggle.onclick = function() {
+      setTheme(document.documentElement.classList.contains('dark-mode') ? 'light' : 'dark');
+    };
+    setTheme(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+    function scrollToCareer(sectionId) {
+  const section = document.getElementById(sectionId);
+  if(section) section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+function goToCareer(id) {
+  const section = document.getElementById(id);
+  if (section) {
+    // Smooth scroll to the section
+    section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Remove focus from any <details> inside to prevent auto-open
+    const detailsList = section.querySelectorAll('details');
+    detailsList.forEach(detail => detail.blur());
+  }
+}
+
+
+  </script>
+</body>
+</html>
