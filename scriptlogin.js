@@ -138,11 +138,14 @@ submitBtn.addEventListener('click', () => {
             delay: .4,
             duration: .1,
             opacity: 0,
-            stagger: .1
+            stagger: .1,
+            onComplete: () => {
+                // Redirect to main.html after the animation completes
+                window.location.href = "main.html";
+            }
         })
     }
 })
-
 
 function layoutPreparation() {
     gsap.set(pullSystemContainer, {
