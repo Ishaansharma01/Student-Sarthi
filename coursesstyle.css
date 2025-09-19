@@ -7,7 +7,7 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(to right, #6c56e6, #d700fd);
+  background: linear-gradient(to right, #e3f2fd, #e1bee7);
   color: #333;
 }
 
@@ -860,537 +860,287 @@ nav {
   background: linear-gradient(90deg, #ffca28 0%, #222 100%);
   color: #222;
 }
-/* FAQ Section */
-.faq-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 20px;
-  box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s, background 0.3s, color 0.3s;
-  text-align: left;
-}
-
-.faq-card h3 {
-  margin-bottom: 10px;
-  color: #4a148c;
-  font-size: 1.2rem;
-}
-
-.faq-card p {
-  color: #555;
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-.faq-card:hover {
-  background: linear-gradient(135deg, #4e54c8, #8f94fb);
-  color: #fff;
-  transform: translateY(-5px);
-}
-
-.faq-card:hover h3,
-.faq-card:hover p {
-  color: #fff;
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
+/* ===== General Styling ===== */
 body {
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background: linear-gradient(120deg,#f0f0f0,#d9d9f0);
-  color:#fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #fdf6fb;
+  margin: 0;
+  padding: 0;
 }
 
-.page-title {
-  text-align:center;
-  margin:40px 0;
-  font-size:2rem;
-  color:#4a148c;
-}
-
-/* Stream Cards */
-.streams-container {
-  display:flex;
-  flex-direction:column;
-  gap:50px;
-  width:90%;
-  margin:auto;
-}
-
-.stream-card {
-  background: rgba(30,30,47,0.7);
-  border-radius:20px;
-  padding:30px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-  border:4px solid transparent;
-  background-clip: padding-box;
+.journey-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
   position: relative;
-  transition: transform 0.4s, box-shadow 0.4s;
 }
 
-.stream-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow:0 20px 50px rgba(0,0,0,0.7);
-}
-
-.stream-card h2 {
-  font-size:2rem;
-  background: var(--accent);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.stream-card p {
-  margin:15px 0 30px 0;
-  color:#ddd;
-}
-
-/* Subcourse Grid */
-.subcourses-grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  perspective: 1500px;
-}
-
-/* 3D Flip Cards */
-.subcourse-card {
-  width:100%;
-  height:300px;
-  perspective: 1500px;
-}
-
-.card-inner {
-  position:relative;
-  width:100%;
-  height:100%;
-  transition: transform 0.8s cubic-bezier(0.4,0.2,0.2,1);
-  transform-style: preserve-3d;
-  cursor:pointer;
-  border-radius:15px;
-}
-
-.subcourse-card:hover .card-inner {
-  transform: rotateY(180deg) rotateX(5deg);
-}
-
-.card-front, .card-back {
-  position:absolute;
-  width:100%;
-  height:100%;
-  border-radius:15px;
-  backface-visibility: hidden;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-  color:#1e1e2f;
-}
-
-/* Front */
-.card-front {
-  background: rgba(255,255,255,0.95);
-  font-weight:600;
-  font-size:1.1rem;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-}
-
-.card-front i {
-  font-size:2.5rem;
+.journey-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
   color: #4a148c;
-  margin-bottom:15px;
-  transition: transform 0.5s, color 0.5s;
 }
 
-.subcourse-card:hover .card-front i {
-  transform: rotate(360deg) scale(1.2);
-  color:#ff6a00;
+.journey-sub {
+  text-align: center;
+  color: #666;
+  margin-bottom: 40px;
 }
 
-/* Back */
-.card-back {
-  background: rgba(255,255,255,0.95);
-  transform: rotateY(180deg);
-  font-size:0.9rem;
-  overflow-y:auto;
+/* ===== Vertical Metro Line ===== */
+.journey-line-vertical {
+  position: relative;
+  padding-left: 60px;
+  margin: 0;
 }
 
-.card-back ul {
-  list-style: disc;
-  padding-left:20px;
-  margin:0;
+/* Animated connecting line */
+.journey-line-vertical::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 30px;
+  width: 4px;
+  height: 0;
+  background: #4a148c;
+  border-radius: 2px;
+  animation: growLine 1.5s forwards;
 }
 
-/* Scrollbar for back content */
-.card-back::-webkit-scrollbar {
-  width:6px;
+@keyframes growLine {
+  0% { height: 0; }
+  100% { height: 100%; }
 }
 
-.card-back::-webkit-scrollbar-thumb {
-  background: rgba(0,0,0,0.2);
-  border-radius:3px;
+/* ===== Nodes ===== */
+.journey-node {
+  position: relative;
+  margin-bottom: 60px;
+  opacity: 0;
+  transform: translateX(-30px);
+  animation: fadeInNode 1s forwards;
+}
+
+.journey-node:nth-child(1) { animation-delay: 0.3s; }
+.journey-node:nth-child(2) { animation-delay: 0.6s; }
+.journey-node:nth-child(3) { animation-delay: 0.9s; }
+
+@keyframes fadeInNode {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ===== Station Marker ===== */
+.journey-node::before {
+  content: '';
+  position: absolute;
+  left: -45px;
+  top: 10px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #4a148c;
+  border: 3px solid #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(74,20,140,0.3);
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+}
+
+/* Station-specific icons */
+.journey-node.root::before { content: "🎓"; }
+.journey-node:nth-child(2)::before { content: "📌"; }
+.journey-node:nth-child(3)::before { content: "📚"; }
+
+/* Highlight Class 10th Node with Animated Gradient */
+.journey-node.root.highlight::before {
+  background: linear-gradient(270deg, #8e24aa, #ff4081, #7b1fa2, #e040fb);
+  background-size: 800% 800%;
+  animation: gradientAnimation 6s ease infinite;
+  box-shadow: 0 0 20px rgba(255, 64, 129, 0.8);
+  transform: scale(1.3);
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Hover effect for all nodes */
+.journey-node:hover::before {
+  transform: scale(1.4);
+  background: #6a1b9a;
+  box-shadow: 0 0 15px #6a1b9a;
+}
+
+/* Content Boxes */
+.content {
+  background: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(74,20,140,0.1);
+  line-height: 1.6;
+  transition: transform 0.3s;
+}
+
+.journey-node:hover .content {
+  transform: translateX(5px);
+}
+
+/* Details styling */
+details {
+  margin-top: 10px;
+  background: #fafafa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 10px 14px;
+  transition: all 0.3s ease;
+}
+
+details summary {
+  cursor: pointer;
+  font-weight: 600;
+  color: #4a148c;
+}
+
+details[open] {
+  background: #f3e5f5;
+  border-color: #4a148c;
+}
+
+details[open] summary {
+  color: #2c0730;
+}
+
+/* Remove default bullets and pad lists */
+.journey-line-vertical ul {
+  list-style: none;
+  padding-left: 20px;
+  margin: 8px 0;
+}
+
+.journey-line-vertical ul li::before {
+  content: "•"; /* optional custom bullet */
+  color: #4a148c;
+  display: inline-block;
+  width: 1em;
+  margin-left: -1em;
 }
 
 /* Responsive */
-@media screen and (max-width:768px){
-  .page-title { font-size:2.2rem; }
-  .subcourses-grid { grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); }
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
-
-body {
-  margin:0;
-  font-family:'Poppins',sans-serif;
-  background: linear-gradient(120deg,#f0f0f0,#d9d9f0);
-  color:#fff;
+@media screen and (max-width: 768px) {
+  .journey-line-vertical { padding-left: 50px; }
+  .content { padding: 18px; }
 }
 
-.page-title {
-  text-align:center;
-  margin:40px 0;
-  font-size:2.5rem;
-  color:#000000;
+@media screen and (max-width: 480px) {
+  .journey-line-vertical { padding-left: 40px; }
+  .content { padding: 15px; font-size: 0.9rem; }
 }
-
-/* Stream Cards */
-.streams-container {
-  display:flex;
-  flex-direction:column;
-  gap:50px;
-  width:90%;
-  margin:auto;
-}
-
-.stream-card {
-  background: rgba(30,30,47,0.7);
-  border-radius:20px;
-  padding:30px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.5);
-  border:4px solid transparent;
-  background-clip: padding-box;
+/* ===== Animated Background for Metro Line Section ===== */
+.journey-section {
   position: relative;
-  transition: transform 0.4s;
-}
-
-.stream-card:hover {
-  transform: translateY(-10px) scale(1.02);
-}
-
-.stream-card h2 {
-  font-size:2rem;
-  background: var(--accent);
-  -webkit-background-clip: text;
-  color: transparent;
-}
-
-.stream-card p {
-  margin:15px 0 30px 0;
-  color:#ddd;
-}
-
-/* Subcourse Grid */
-.subcourses-grid {
-  display:grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap:25px;
-  perspective: 1000px;
-}
-
-/* 3D Flip Cards */
-.subcourse-card {
-  width:100%;
-  height:280px;
-  perspective: 1000px;
-}
-
-.card-inner {
-  position:relative;
-  width:100%;
-  height:100%;
-  transition: transform 0.8s cubic-bezier(0.4,0.2,0.2,1);
-  transform-style: preserve-3d;
-  cursor:pointer;
-  border-radius:15px;
-}
-
-.card-front, .card-back {
-  position:absolute;
-  width:100%;
-  height:100%;
-  border-radius:15px;
-  backface-visibility: hidden;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  padding:20px;
-  box-shadow:0 8px 20px rgba(0,0,0,0.3);
-  transition: all 0.3s ease;
-  color:#1e1e2f;
-}
-
-.card-front {
-  background: rgba(255,255,255,0.95);
-  font-weight:600;
-  font-size:1.1rem;
-}
-
-.card-front i {
-  font-size:2.5rem;
-  color: #4a148c;
-  margin-bottom:15px;
-  transition: transform 0.5s;
-}
-
-.card-back {
-  background: rgba(255,255,255,0.95);
-  transform: rotateY(180deg);
-  font-size:0.9rem;
-  overflow-y:auto;
-}
-
-.card-back ul {
-  list-style: disc;
-  padding-left:20px;
-  margin:0;
-}
-/* Make subcourses in one horizontal line */
-.subcourses-grid {
-  display: flex;
-  gap: 25px;
-  overflow-x: auto;
-  padding-bottom: 10px;
-  scroll-behavior: smooth;
-}
-
-/* Hide scrollbar for modern look */
-.subcourses-grid::-webkit-scrollbar {
-  display: none;
-}
-.subcourses-grid {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
-
-/* Increase font sizes */
-.card-front, .card-back {
-  font-size: 1.2rem; /* bigger text */
-}
-
-.card-front h3 {
-  font-size: 1.4rem; /* bigger title */
-}
-
-.card-back ul li {
-  font-size: 1.1rem; /* bigger list */
-}
-
-.card .highlight {
-  background: rgba(255, 255, 255, 0.1); /* subtle highlight */
-  padding: 10px 15px;
-  border-left: 4px solid #ffcc00; /* gold accent */
-  border-radius: 8px;
-  margin: 8px 0;
-  transition: all 0.3s ease;
-  font-weight: 600;
-}
-
-.card .highlight:hover {
-  background: rgba(255, 255, 255, 0.25); /* brighten on hover */
-  transform: translateX(5px); /* small slide effect */
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-/* 🎓 Scholarships / Courses Cards */
-.scholarships .card {
-  background: linear-gradient(135deg, #f9f9f9, #e6e6e6); /* soft gray background */
-  color: #333; /* dark text for readability */
-  border: 1px solid #ddd;
-  border-radius: 12px;
-  padding: 20px;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.scholarships .card h3,
-.scholarships .card p {
-  color: #222; /* ensure text is always visible */
-}
-
-.scholarships .card:hover {
-  background: linear-gradient(135deg, #9a17ff, #6200ff); /* blue gradient hover */
-  color: #fff; /* make text white on hover */
-  transform: translateY(-8px); /* lift effect */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.scholarships .card:hover h3,
-.scholarships .card:hover p {
-  color: #fff; /* text turns white on hover */
-}
-/* ✨ Highlight Cards (Arts, Commerce, Science quick cards) */
-.highlight-card {
-  background: linear-gradient(135deg, #f9f9f9, #838181); /* soft gray background */
-  color: #333; /* dark text for readability */
-  border-radius: 12px;
-  padding: 25px;
-  text-align: center;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
-}
-
-.highlight-card h3,
-.highlight-card p,
-.highlight-card a {
-  color: #222; /* ensure text is visible */
-}
-
-.highlight-card:hover {
-  background: linear-gradient(135deg, #369eff, #8940ff); /* blue gradient hover */
-  color: #fff; /* text turns white */
-  transform: translateY(-8px); /* lift effect */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
-
-.highlight-card:hover h3,
-.highlight-card:hover p,
-.highlight-card:hover a {
-  color: #040008; /* ensure text stays white on hover */
-}
-
-/* Dropdown stays readable */
-.highlight-card .dropdown-list {
-  background: rgba(255, 255, 255, 0.95);
-  color: #ffffff;
-  border-radius: 8px;
-  padding: 8px;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-.highlight-card:hover .dropdown-list {
-  background: rgba(0, 0, 0, 0.3);
-  color: #bab9b9;
-}
-/* 🎓 College Finder Section */
-.college-finder {
-  margin: 60px auto;
   max-width: 900px;
-  padding: 30px;
-  text-align: center;
-  background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
-  border-radius: 16px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  margin: 50px auto;
+  padding: 50px 20px;
+  border-radius: 15px;
+  overflow: hidden;
+
+  /* Animated gradient background */
+  background: linear-gradient(-45deg, #8e24aa, #ff4081, #7b1fa2, #e040fb);
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
+
+  /* Optional shadow for depth */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.college-finder h2 {
-  font-size: 1.8rem;
-  color: #222;
-  margin-bottom: 20px;
+/* Gradient animation keyframes */
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-.filters {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin-bottom: 25px;
+/* Make the content readable on gradient */
+.journey-section .journey-title,
+.journey-section .journey-sub,
+.journey-section .content,
+details summary,
+details[open] summary {
+  color: #fff; /* white text over gradient */
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2);
 }
 
-.filters select {
-  padding: 12px 18px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 1rem;
-  transition: 0.3s;
-}
-
-.filters select:hover {
-  border-color: #4facfe;
-}
-
-.college-results {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.college-results .college-card {
-  background: #fff;
-  padding: 18px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: 0.3s;
-}
-
-.college-results .college-card:hover {
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
+/* Optional: slightly transparent content boxes */
+.journey-section .content,
+details {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(255,255,255,0.3);
   color: #fff;
-  transform: translateY(-6px);
 }
-.college-card h3 {
-  margin-bottom: 10px;
-  font-size: 1.2rem;
-  color: #333;
+/* ===== Dark Cards for Metro Nodes ===== */
+.journey-section .content,
+.journey-section details {
+  background: #1e1e2f; /* dark card background */
+  color: #fff;          /* main text color */
+  border: 1px solid #333; /* subtle border */
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.5);
+  transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+  backdrop-filter: blur(4px); /* optional for soft background */
 }
 
-.college-card p {
-  margin: 6px 0;
-  font-size: 0.95rem;
-}
-
-.college-card a {
-  color: #0077ff;
-  text-decoration: none;
+/* Details summary in dark mode */
+details summary {
+  color: #ffca28; /* golden/yellow text for headings */
   font-weight: 600;
-  transition: color 0.3s;
+  cursor: pointer;
 }
 
-.college-card a:hover {
-  color: #ff6600;
-}
-.college-results .college-card {
-  background: #4a148c; /* deep purple for visibility */
-  padding: 18px;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
-  color: #fff; /* text color */
-  transition: 0.4s ease;
+/* Opened details background slightly lighter */
+details[open] {
+  background: #2c2c3e;
+  border-color: #555;
 }
 
-.college-results .college-card:hover {
-  background: linear-gradient(135deg, #6d6b6b, #a19f9b); /* bright orange-gold gradient */
-  color: #1e1e1e; /* dark text on bright background */
-  transform: translateY(-6px) scale(1.03); /* slight scale effect */
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25); /* stronger shadow on hover */
+details[open] summary {
+  color: #ffeb3b; /* brighter heading when expanded */
 }
 
-.college-card h3 {
-  margin-bottom: 10px;
-  font-size: 1.25rem;
-  color: inherit; /* inherits white normally, dark on hover */
+/* Hover effect on content boxes */
+.journey-section .content:hover,
+details:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.7);
 }
 
-.college-card p {
-  margin: 6px 0;
-  font-size: 1rem;
-  color: inherit;
+/* Gradient animated background still visible through dark cards */
+.journey-section {
+  position: relative;
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 50px 20px;
+  border-radius: 15px;
+  overflow: hidden;
+  background: linear-gradient(-45deg, #8e24aa, #ff4081, #7b1fa2, #e040fb);
+  background-size: 400% 400%;
+  animation: gradientBackground 15s ease infinite;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
 }
 
-.college-card a {
-  color: #ffca28; /* visible gold link */
-  text-decoration: none;
-  font-weight: 600;
-  transition: color 0.3s;
-}
-
-.college-card a:hover {
-  color: #fff; /* invert to white on hover */
+/* Gradient animation keyframes */
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 .hero-btn {
   padding: 15px 35px;
@@ -1428,17 +1178,4 @@ body {
   transform: translateY(-5px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.35);
   background: linear-gradient(135deg, #6a1b9a, #7b1fa2);
-}
-/* Container for hero buttons */
-.hero-buttons {
-  display: flex;
-  gap: 20px; /* space between buttons */
-  flex-wrap: wrap; /* stack buttons on smaller screens */
-  justify-content: center;
-  margin-top: 15px;
-}
-
-/* Ensure buttons remain consistent */
-.hero-buttons .hero-btn {
-  min-width: 180px; /* optional, keeps buttons same width */
 }
