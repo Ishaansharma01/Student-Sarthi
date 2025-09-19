@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses After 12th</title>
+  <link rel="stylesheet" href="Coursesstyle.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<body>
+  <!-- Navbar -->
+  <nav>
+    <h1>Student Sarthi</h1>
+    <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()">☰</button>
+    <ul id="menu">
+      <li><a href="main.html">Home</a></li>
+      <li><a href="careers.html">Careers</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="scholarship.html">Scholarships</a></li>
+      <button id="theme-toggle" class="theme-btn">🌙</button>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="slider">
+      <div class="slide active" style="background-image: url('https://cdn.pixabay.com/photo/2016/11/29/03/53/startup-1869490_1280.jpg');"></div>
+      <div class="slide" style="background-image: url('https://cdn.pixabay.com/photo/2015/01/08/18/25/startup-593327_1280.jpg');"></div>
+      <div class="slide" style="background-image: url('https://cdn.pixabay.com/photo/2016/03/26/22/20/businessman-1284465_1280.jpg');"></div>
+    </div>
+    <div class="hero-text">
+      <h2>Courses Guidance</h2>
+      <p>Explore Arts, Commerce & Science pathways and their future scope.</p><br>
+       <div class="hero-buttons">
+      <button class="hero-btn" onclick="scrollToHighlights()">Explore Courses</button>
+      <button class="hero-btn" onclick="scrollToColleges()">Explore Colleges</button>
+    </div>
+
+    </div>
+  </section>
+
+  <!-- Highlight Cards -->
+  <section class="highlight-cards">
+    <div class="highlight-card">
+      <h3>🎨 Arts</h3>
+      <p>Creative and social science domains.</p>
+      <ul class="dropdown-list">
+        <li><a href="#">BA (English, History, Political Science)</a></li>
+        <li><a href="#">BJMC (Journalism & Mass Comm.)</a></li>
+        <li><a href="#">BFA (Fine Arts)</a></li>
+      </ul>
+    </div>
+    <div class="highlight-card">
+      <h3>💼 Commerce</h3>
+      <p>Business, accounts, finance & management.</p>
+      <ul class="dropdown-list">
+        <li><a href="#">B.Com (Hons/Pass)</a></li>
+        <li><a href="#">BBA</a></li>
+        <li><a href="#">CA/CS/CFA</a></li>
+      </ul>
+    </div>
+    <div class="highlight-card">
+      <h3>🔬 Science</h3>
+      <p>Medical, engineering & research fields.</p>
+      <ul class="dropdown-list">
+        <li><a href="#">B.Tech</a></li>
+        <li><a href="#">MBBS/BDS/BAMS</a></li>
+        <li><a href="#">B.Sc (Physics, Chemistry, Math, Bio)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Search -->
+  <section style="text-align:center; margin: 30px 0;">
+    <input type="text" id="course-search" placeholder="Search courses..." 
+      style="padding:10px 18px; border-radius:8px; border:1.5px solid #4a148c; width: 260px; font-size:1rem;">
+  </section>
+<h1 class="page-title">Course Offerenings After 10th</h1>
+
+<div class="streams-container">
+
+  <!-- 1. Science Stream -->
+  <div class="stream-card" style="--accent: linear-gradient(135deg,#4facfe,#00f2fe);">
+    <h2>Science Stream</h2>
+    <p>Most versatile stream. Opens doors to engineering, medical, IT, research, and government jobs.</p>
+    <div class="subcourses-grid">
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-atom"></i>
+            <h3>PCM</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Focus:</b> Technology, engineering, research, computers</li>
+              <li><b>Future:</b> B.Tech, B.Sc, Architecture, IT</li>
+              <li><b>Jobs:</b> Software Engineer, Civil Engineer, Data Scientist, Research Analyst</li>
+              <li><b>Salary:</b> ₹3–10 LPA (entry), ₹15+ LPA (experienced)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-dna"></i>
+            <h3>PCB</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Focus:</b> Medicine, life sciences, healthcare</li>
+              <li><b>Future:</b> MBBS, BDS, Nursing, B.Sc Biology, Pharmacy</li>
+              <li><b>Jobs:</b> Doctor, Dentist, Pharmacist, Biotechnologist, Researcher</li>
+              <li><b>Salary:</b> ₹4–15 LPA, ₹20+ LPA later</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-flask"></i>
+            <h3>PCMB</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li>Combination of PCM + PCB</li>
+              <li><b>Future:</b> Eligible for both Engineering & Medical</li>
+              <li><b>Jobs:</b> Doctor, Engineer, Biotech Specialist</li>
+              <li><b>Salary:</b> Same as PCM/PCB streams</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-cogs"></i>
+            <h3>Diploma in Engineering</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li>3 years, hands-on Mechanical, Civil, Electrical, IT</li>
+              <li><b>Jobs:</b> Junior Engineer, Site Supervisor, IT Technician, Government PSUs</li>
+              <li><b>Salary:</b> ₹3–7 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-tools"></i>
+            <h3>ITI</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li>6 months–2 years: Electrician, Fitter, Mechanic, Plumber, Turner, COPA</li>
+              <li><b>Jobs:</b> Technician, Skilled Worker, Government ITI posts, Apprenticeships</li>
+              <li><b>Salary:</b> ₹1.8–4.5 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 2. Commerce Stream -->
+  <div class="stream-card" style="--accent: linear-gradient(135deg,#f7971e,#ffd200);">
+    <h2>Commerce Stream</h2>
+    <p>Best for business, finance, and management careers.</p>
+    <div class="subcourses-grid">
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-chart-line"></i>
+            <h3>Commerce with Maths</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Focus:</b> Accounts, Finance, Economics, Business Studies, Maths</li>
+              <li><b>Future:</b> B.Com Hons, CA, CFA, MBA, Actuarial Science</li>
+              <li><b>Jobs:</b> Investment Banker, Data Analyst, Financial Advisor, Chartered Accountant</li>
+              <li><b>Salary:</b> ₹6–20 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-wallet"></i>
+            <h3>Commerce without Maths</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Focus:</b> Business Studies, Accounts, Economics, Entrepreneurship</li>
+              <li><b>Future:</b> B.Com, BBA, Law, Company Secretary, Digital Marketing</li>
+              <li><b>Jobs:</b> Business Analyst, HR Manager, Accountant, Marketing Executive</li>
+              <li><b>Salary:</b> ₹3–10 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-file-invoice-dollar"></i>
+            <h3>Diploma in Accounting & Finance</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Focus:</b> Tally, GST, Taxation, Banking</li>
+              <li><b>Jobs:</b> Accountant, GST Consultant, Payroll Officer</li>
+              <li><b>Salary:</b> ₹2.5–6 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-briefcase"></i>
+            <h3>Diploma in Business / Marketing</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Focus:</b> Business operations, Sales, Marketing, Entrepreneurship</li>
+              <li><b>Jobs:</b> Marketing Executive, Business Developer, Entrepreneur</li>
+              <li><b>Salary:</b> ₹3–8 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 3. Arts Stream -->
+  <div class="stream-card" style="--accent: linear-gradient(135deg,#ff5f6d,#ffc371);">
+    <h2>Arts / Humanities Stream</h2>
+    <p>Ideal for creative or social sciences careers.</p>
+    <div class="subcourses-grid">
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-landmark"></i>
+            <h3>Humanities Subjects</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Subjects:</b> History, Political Science, Geography, Psychology, Economics, Sociology</li>
+              <li><b>Future:</b> BA, Law, Civil Services, UPSC/SSC, Social Work</li>
+              <li><b>Jobs:</b> Lawyer, Teacher, Civil Servant, Economist, Psychologist</li>
+              <li><b>Salary:</b> ₹3–12 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-paint-brush"></i>
+            <h3>Fine Arts / Animation / Graphic Design</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Focus:</b> Painting, Design, Illustration, Digital Art, Animation, VFX</li>
+              <li><b>Jobs:</b> Graphic Designer, Animator, Creative Director</li>
+              <li><b>Salary:</b> ₹2.5–8 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-newspaper"></i>
+            <h3>Journalism & Mass Communication</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Focus:</b> Reporting, Editing, Media, PR, Broadcasting</li>
+              <li><b>Jobs:</b> Journalist, News Anchor, PR Manager</li>
+              <li><b>Salary:</b> ₹3–10 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-hotel"></i>
+            <h3>Hotel Management / Tourism</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Focus:</b> Hospitality, Travel, Food & Beverage</li>
+              <li><b>Jobs:</b> Hotel Manager, Chef, Tour Operator</li>
+              <li><b>Salary:</b> ₹3–12 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 4. Vocational / Skill-Based -->
+  <div class="stream-card" style="--accent: linear-gradient(135deg,#43cea2,#185a9d);">
+    <h2>Vocational / Skill-Based Courses</h2>
+    <p>Quick jobs, entrepreneurship, or freelance work.</p>
+    <div class="subcourses-grid">
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-tools"></i>
+            <h3>ITI (Skilled Trades)</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li>Electrician, Plumber, Welder, Mechanic, COPA (Computers)</li>
+              <li><b>Skilled Worker, Technician</b></li>
+              <li><b>Salary:</b> ₹2–5 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-laptop-code"></i>
+            <h3>Diploma in Computer Applications</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Focus:</b> MS Office, Tally, Internet, Basic Programming</li>
+              <li><b>Jobs:</b> Data Entry, Office Assistant, Junior Programmer</li>
+              <li><b>Salary:</b> ₹2–4 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-globe"></i>
+            <h3>Web Development / Digital Marketing</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Focus:</b> Website Design, SEO, Google Ads, Social Media</li>
+              <li><b>Jobs:</b> Web Developer, Digital Marketer, SEO Analyst</li>
+              <li><b>Salary:</b> ₹2.5–8 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-magic"></i>
+            <h3>Beauty & Wellness / Fashion Designing</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Jobs:</b> Makeup Artist, Stylist, Fashion Designer, Salon Owner</li>
+              <li><b>Salary:</b> ₹2.5–10 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-video"></i>
+            <h3>Animation & VFX / Photography</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Jobs:</b> VFX Artist, Photographer, Videographer, Graphic Designer</li>
+              <li><b>Salary:</b> ₹3–8 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- 5. Professional Diplomas -->
+  <div class="stream-card" style="--accent: linear-gradient(135deg,#ff6a00,#ee0979);">
+    <h2>Professional Diplomas</h2>
+    <p>Job-oriented specialized diplomas after 10th.</p>
+    <div class="subcourses-grid">
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-cogs"></i>
+            <h3>Polytechnic Diploma</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li>Civil, Mechanical, IT, Electrical</li>
+              <li><b>Salary:</b> ₹3–7 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-prescription-bottle-alt"></i>
+            <h3>Diploma in Pharmacy</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Jobs:</b> Pharmacist, Medical Sales Rep, Hospital Assistant</li>
+              <li><b>Salary:</b> ₹3–8 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-user-nurse"></i>
+            <h3>Diploma in Nursing / Paramedical</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Jobs:</b> Nurse, Lab Technician, Radiographer</li>
+              <li><b>Salary:</b> ₹2.5–6 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-plane"></i>
+            <h3>Diploma in Aviation</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Jobs:</b> Air Hostess, Flight Steward, Airport Manager</li>
+              <li><b>Salary:</b> ₹4–12 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="subcourse-card">
+        <div class="card-inner">
+          <div class="card-front">
+            <i class="fas fa-desktop"></i>
+            <h3>Diploma in Computer Science / IT</h3>
+          </div>
+          <div class="card-back">
+            <ul>
+              <li><b>Jobs:</b> IT Support, Programmer, Software Tester</li>
+              <li><b>Salary:</b> ₹3–8 LPA</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+<h1 class="page-title">Course Offerenings After 12th</h1>
+<!-- Course Cards -->
+  <section class="scholarships" id="course-list">
+    <!-- Arts -->
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/paint-palette.png" alt="Arts">
+      <h3>BA (Bachelor of Arts)</h3>
+      <p>Future: Civil Services, Teaching, Journalism, Research.</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/news.png" alt="BJMC">
+      <h3>BJMC (Mass Communication)</h3>
+      <p>Future: Journalism, Media, PR, Advertising, Digital Marketing.</p>
+    </div>
+    <!-- Commerce -->
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/accounting.png" alt="B.Com">
+      <h3>B.Com (Bachelor of Commerce)</h3>
+      <p>Future: Chartered Accountant, Banking, MBA, Finance Analyst.</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/business.png" alt="BBA">
+      <h3>BBA (Bachelor of Business Administration)</h3>
+      <p>Future: Business Manager, Entrepreneur, HR, Corporate Jobs.</p>
+    </div>
+    <!-- Science -->
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/engineering.png" alt="B.Tech">
+      <h3>B.Tech (Engineering)</h3>
+      <p>Future: Software Engineer, Data Scientist, Mechanical Engineer.</p>
+    </div>
+    <div class="card">
+      <img src="https://img.icons8.com/color/96/stethoscope.png" alt="Doctor">
+      <h3>MBBS (Medicine)</h3>
+      <p>Future: Doctor, Surgeon, Researcher, Healthcare Specialist.</p>
+    </div>
+  </section>
+
+  <section class="college-finder">
+  <h2>Find Government Colleges</h2>
+  
+  <div class="filters">
+    <select id="stateSelect">
+  <option value="">-- Select State --</option>
+  <option value="Delhi">Delhi</option>
+  <option value="Haryana">Haryana</option>
+  <option value="Himachal Pradesh">Himachal Pradesh</option>
+  <option value="Karnataka">Karnataka</option>
+  <option value="Madhya Pradesh">Madhya Pradesh</option>
+  <option value="Maharashtra">Maharashtra</option>
+  <option value="Punjab">Punjab</option>
+  <option value="Rajasthan">Rajasthan</option>
+  <option value="Tamil Nadu">Tamil Nadu</option>
+  <option value="Uttarakhand">Uttarakhand</option>
+  <option value="Uttar Pradesh">Uttar Pradesh</option>
+  <option value="Jammu & Kashmir">Jammu & Kashmir</option>
+</select>
+
+
+    <select id="degreeSelect">
+      <option value="">-- Select Degree --</option>
+      <option value="B.Tech">B.Tech</option>
+      <option value="MBBS">MBBS</option>
+      <option value="B.Sc">B.Sc</option>
+      <option value="BA">BA</option>
+      <option value="B.Com">B.Com</option>
+    </select>
+  </div>
+
+  <div id="collegeResults" class="college-results"></div>
+</section>
+
+ <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Courses Portal | All Rights Reserved</p>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="courses.js"></script>
+</body>
+</html>

@@ -1,0 +1,1444 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #6c56e6, #d700fd);
+  color: #333;
+}
+
+/* Navbar */
+nav {
+  background: #4a148c;
+  color: white;
+  padding: 14px 36px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  box-shadow: 0 2px 16px rgba(74,20,140,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  z-index: 100;
+}
+
+nav h1 {
+  font-size: 1.45rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-right: 22px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: color 0.3s;
+}
+
+/* Menu */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 22px;
+  align-items: center;
+  margin: 0;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.08rem;
+  padding: 6px 0;
+  border-bottom: 2px solid transparent;
+  transition: color 0.3s, border-bottom 0.3s;
+  position: relative;
+}
+
+nav ul li a:hover {
+  color: #ffca28;
+  border-bottom: 2px solid #ffca28;
+}
+
+/* Hamburger Button */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  margin-left: 12px;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.menu-toggle:active {
+  color: #ffca28;
+  transform: scale(1.1);
+}
+
+/* Hero */
+.hero {
+  height: 300px;
+  background: url('https://hips.hearstapps.com/hmg-prod/images/graduation-captions-lead-image-6412222f98500.jpg?crop=1xw:0.8423586572438162xh;0,0') no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  padding: 0 10px;
+}
+
+.hero-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+}
+
+/* Filter */
+.filter {
+  text-align: center;
+  padding: 30px;
+}
+
+.filter select {
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #4a148c;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filter select:hover {
+  background: #f3e5f5;
+}
+
+/* Scholarship Cards */
+.scholarships {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  padding: 40px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 12px 20px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+  color: #4a148c;
+  margin-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  background: #4a148c;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #6a1b9a;
+}
+
+/* About */
+.about {
+  padding: 50px 20px;
+  background: #f3e5f5;
+  text-align: center;
+}
+
+.about h2 {
+  margin-bottom: 15px;
+  color: #4a148c;
+}
+
+/* Footer */
+footer {
+  background: #4a148c;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  margin-top: 20px;
+}
+
+/* 📱 Responsive Design */
+@media (max-width: 992px) {
+  .highlight-cards {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .scholarships {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 20px;
+  }
+  .reviews > div {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  nav {
+    padding: 10px 12px;
+  }
+  nav h1 {
+    font-size: 1.08rem;
+    margin-right: 10px;
+  }
+  nav ul {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: row;
+    padding: 8px 4px;
+  }
+  nav h1 {
+    font-size: 0.98rem;
+    margin-right: 0;
+  }
+  .menu-toggle {
+    display: block;
+    margin-left: 0;
+  }
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: #6a1b9a;
+    position: absolute;
+    top: 48px;
+    right: 0;
+    width: 160px;
+    text-align: center;
+    padding: 12px 0;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    z-index: 1000;
+    gap: 0;
+  }
+  nav ul.active {
+    display: flex !important;
+  }
+  nav ul li {
+    margin: 0 0 6px 0;
+  }
+  nav ul li:last-child {
+    margin-bottom: 0;
+  }
+  nav ul li a {
+    font-size: 0.98rem;
+    padding: 4px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  nav {
+    padding: 10px 8px;
+  }
+  nav h1 {
+    font-size: 1.1rem;
+  }
+  .btn {
+    padding: 8px 12px;
+    font-size: 0.95rem;
+  }
+  .hero {
+    height: 48vh;
+  }
+  .scholarships {
+    grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 6px;
+  }
+  .highlight-cards {
+    gap: 8px;
+    margin: 10px auto;
+  }
+  .reviews > div {
+    flex-direction: column;
+    gap: 8px !important;
+  }
+  .card {
+    min-width: 120px !important;
+    max-width: 100% !important;
+    font-size: 0.98rem;
+  }
+  .state-scholarships {
+    padding: 10px;
+  }
+  .about {
+    padding: 20px 8px;
+  }
+}
+
+/* Highlight Cards */
+.highlight-cards {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 40px auto;
+  max-width: 1100px;
+}
+
+.highlight-card {
+  position: relative;
+  flex: 1 1 300px;
+  background: linear-gradient(135deg, #f9f9ff, #eef3ff);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, background 0.4s ease, box-shadow 0.4s ease;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.highlight-card:hover {
+  transform: translateY(-5px);
+  background: linear-gradient(135deg, #4e54c8, #8f94fb); /* same as navbar */
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+  color: white; /* makes text visible on gradient */
+  z-index: 10;
+}
+
+.highlight-card:hover h3,
+.highlight-card:hover p {
+  color: #fff; /* Ensure text is readable */
+}
+
+/* Dropdown List */
+.dropdown-list {
+  display: none;
+  list-style: none;
+  margin-top: 18px;
+  padding: 0;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  text-align: left;
+  position: absolute;
+  width: 90%;
+  left: 5%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  z-index: 1002;
+}
+
+.highlight-card:hover .dropdown-list {
+  display: block;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.dropdown-list a {
+  display: block;
+  padding: 10px 15px;
+  color: #004aad;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.dropdown-list a:hover {
+  background: #f0f4ff;
+  color: #000;
+  border-radius: 8px;
+}
+
+
+/* Hero Section with Slider */
+.hero {
+  position: relative;
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  color: white;
+}
+
+.slider {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+}
+
+.slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+/* Gradient shading effect at bottom */
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 100%; height: 30%;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(249,249,249,1) 100%);
+  pointer-events: none;
+}
+
+/* Hero Text */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  background: rgba(0,0,0,0.5);
+  padding: 20px 30px;
+  border-radius: 12px;
+}
+
+/* ===============================
+   RESPONSIVE DESIGN
+================================= */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .navbar ul {
+    flex-direction: column;
+    background: #0066cc;
+    position: absolute;
+    top: 60px;
+    left: -100%;
+    width: 100%;
+    text-align: center;
+    transition: left 0.4s ease;
+  }
+
+  .navbar ul.active {
+    left: 0;
+  }
+
+  .navbar li {
+    margin: 15px 0;
+  }
+
+  .hero-text {
+    font-size: 0.9rem;
+    padding: 15px 20px;
+  }
+
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .hero {
+    height: 50vh;
+  }
+
+  .hero-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .hero-text p {
+    font-size: 0.9rem;
+  }
+
+  .card-container {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    font-size: 1rem;
+  }
+
+  .dropdown-content {
+    width: 100%;
+    left: 0;
+  }
+}
+/* State Scholarships Section */
+.state-scholarships {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.state-scholarships::before {
+  content: '';
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 320px;
+  height: 220px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/4/4e/India_Map_Vector.svg') no-repeat center/contain;
+  opacity: 0.08;
+  z-index: 0;
+  pointer-events: none;
+}
+.state-scholarships > * {
+  position: relative;
+  z-index: 1;
+}
+
+.state-scholarships h2 {
+  margin-bottom: 20px;
+  font-size: 1.8rem;
+  color: #004aad;
+}
+
+/* Outer Border Box */
+.state-box {
+  border: 2px solid #4a148c;
+  border-radius: 18px;
+  padding: 32px 24px 28px 24px;
+  background: linear-gradient(135deg, #f3e5f5 60%, #e1bee7 100%);
+  box-shadow: 0 6px 24px rgba(74,20,140,0.10), 0 1.5px 6px rgba(74,20,140,0.08);
+  max-width: 400px;
+  margin: 0 auto;
+  margin-bottom: 18px;
+  transition: box-shadow 0.3s;
+}
+
+.state-box:hover {
+  box-shadow: 0 10px 32px rgba(74,20,140,0.18), 0 2px 8px rgba(74,20,140,0.10);
+}
+
+.state-box label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 14px;
+  font-size: 1.18rem;
+  color: #4a148c;
+  letter-spacing: 0.5px;
+}
+
+/* Dropdown Styling */
+.state-box select {
+  width: 100%;
+  padding: 14px 18px;
+  font-size: 1.08rem;
+  border-radius: 10px;
+  border: 2px solid #b39ddb;
+  outline: none;
+  background: #fff url('data:image/svg+xml;utf8,<svg fill="%234a148c" height="20" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>') no-repeat right 16px center/20px 20px;
+  appearance: none;
+  transition: border 0.3s, box-shadow 0.3s;
+  box-shadow: 0 1.5px 6px rgba(74,20,140,0.06);
+  cursor: pointer;
+}
+
+.state-box select:focus, .state-box select:hover {
+  border-color: #4a148c;
+  box-shadow: 0 0 0 2px #e1bee7;
+  background-color: #f3e5f5;
+}
+
+/* Reviews Section */
+.reviews {
+  background: #181828;
+  padding: 40px 0;
+  transition: background 0.3s;
+}
+
+/* Dark mode for reviews section */
+.dark-mode .reviews {
+  background: #181828;
+}
+
+.reviews .review-card {
+  transition: background 0.3s, color 0.3s;
+}
+
+.reviews .review-card:hover {
+  background: #4a148c;
+  color: #fff;
+}
+
+.reviews .review-card:hover h3,
+.reviews .review-card:hover p {
+  color: #fff;
+}
+
+.reviews .review-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  object-fit: cover;
+  border: 2px solid #4a148c;
+  transition: border 0.3s;
+}
+
+.reviews .review-card:hover .review-img {
+  border: 2px solid #fff;
+}
+
+.scholarship-img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+  border-radius: 12px;
+  background: #f3e5f5;
+  box-shadow: 0 2px 8px rgba(74,20,140,0.08);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* State Arrow Animation */
+.state-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 8px;
+  animation: bounce 1.2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(12px); }
+}
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --nav-bg: #4a148c;
+  --nav-text: #ffffff;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0,0,0,0.1);
+  --highlight-bg: linear-gradient(to right, #e3f2fd, #e1bee7);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--highlight-bg);
+  color: var(--text-color);
+}
+
+/* Navbar */
+nav {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+}
+
+/* Cards */
+.card {
+  background: var(--card-bg);
+  box-shadow: 0px 6px 12px var(--card-shadow);
+}
+
+/* Dark mode button */
+.theme-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--nav-text);
+  transition: transform 0.3s;
+}
+
+.theme-btn:hover {
+  transform: rotate(20deg);
+}
+/* 🌙 Dark Mode Theme */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #f5f5f5;
+  --nav-bg: #222;
+  --nav-text: #ffca28;
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(255,255,255,0.05);
+  --highlight-bg: linear-gradient(to right, #1a1a1a, #2c2c2c);
+}
+/* 🌙 Dark Mode Complete Styling */
+.dark-mode {
+  --bg-color: #121212;
+  --text-color: #e0e0e0;
+  --nav-bg: #1e1e1e;
+  --nav-text: #ffca28;
+  --card-bg: #1e1e1e;
+  --card-shadow: rgba(255, 255, 255, 0.08);
+  --highlight-bg: linear-gradient(to right, #1a1a1a, #2c2c2c);
+}
+
+/* Body + Sections */
+.dark-mode body {
+  background: var(--highlight-bg);
+  color: var(--text-color);
+}
+
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p,
+.dark-mode label,
+.dark-mode small {
+  color: var(--text-color) !important;
+}
+
+/* Navbar */
+.dark-mode nav {
+  background: var(--nav-bg);
+  color: var(--nav-text);
+}
+
+.dark-mode nav h1 {
+  color: var(--nav-text);
+}
+
+.dark-mode nav ul li a {
+  color: var(--nav-text);
+}
+
+.dark-mode nav ul li a:hover {
+  color: #90caf9; /* light blue highlight */
+  border-bottom: 2px solid #90caf9;
+}
+
+/* Cards */
+.dark-mode .card {
+  background: var(--card-bg);
+  box-shadow: 0px 6px 12px var(--card-shadow);
+  color: var(--text-color);
+}
+
+/* Buttons */
+.dark-mode .btn {
+  background: #ffca28;
+  color: #121212;
+}
+
+.dark-mode .btn:hover {
+  background: #ffd54f;
+  color: #000;
+}
+
+/* Highlight Cards */
+.dark-mode .highlight-card {
+  background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
+  color: var(--text-color);
+}
+
+.dark-mode .highlight-card:hover {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: #fff;
+}
+
+/* Dropdown (State Select Box) */
+.dark-mode .state-box {
+  background: linear-gradient(135deg, #2a2a2a, #1c1c1c);
+  border: 2px solid #666;
+}
+
+.dark-mode .state-box label {
+  color: #ffca28;
+}
+
+.dark-mode .state-box select {
+  background: #1e1e1e;
+  color: var(--text-color);
+  border: 2px solid #666;
+}
+
+.dark-mode .state-box select:focus {
+  border-color: #ffca28;
+  background-color: #2c2c2c;
+}
+
+/* Reviews */
+.dark-mode .review-card {
+  background: #1e1e1e;
+  color: var(--text-color);
+}
+
+.dark-mode .review-card:hover {
+  background: #333;
+  color: #fff;
+}
+
+.dark-mode .review-img {
+  border: 2px solid #ffca28;
+}
+
+/* Footer */
+.dark-mode footer {
+  background: #1e1e1e;
+  color: #ffca28;
+}
+
+/* Progress Bar */
+.dark-mode .progress-container {
+  background: #333;
+}
+
+.dark-mode .progress-bar {
+  opacity: 0.9;
+}
+
+/* Dropdown List under Highlight Cards */
+.dark-mode .dropdown-list {
+  background: #2a2a2a;
+  border: 1px solid #555;
+}
+
+.dark-mode .dropdown-list a {
+  color: #ffca28;
+}
+
+.dark-mode .dropdown-list a:hover {
+  background: #3c3c3c;
+  color: #fff;
+}
+
+/* Dark/Light Mode Toggle Button */
+.theme-btn {
+  background: linear-gradient(90deg, #ffca28 0%, #4a148c 100%);
+  border: none;
+  font-size: 1.08rem;
+  font-weight: 700;
+  padding: 10px 26px;
+  border-radius: 24px;
+  cursor: pointer;
+  color: #fff;
+  margin-left: 18px;
+  box-shadow: 0 2px 8px rgba(74,20,140,0.13);
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  outline: none;
+  letter-spacing: 1px;
+  position: relative;
+  z-index: 2;
+}
+
+.theme-btn:hover, .theme-btn:focus {
+  background: linear-gradient(90deg, #4a148c 0%, #ffca28 100%);
+  color: #222;
+  transform: scale(1.06);
+  box-shadow: 0 4px 16px rgba(74,20,140,0.18);
+}
+
+/* Dark mode button style */
+.dark-mode .theme-btn {
+  background: linear-gradient(90deg, #222 0%, #ffca28 100%);
+  color: #ffca28;
+}
+
+.dark-mode .theme-btn:hover, .dark-mode .theme-btn:focus {
+  background: linear-gradient(90deg, #ffca28 0%, #222 100%);
+  color: #222;
+}
+/* FAQ Section */
+.faq-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 6px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, background 0.3s, color 0.3s;
+  text-align: left;
+}
+
+.faq-card h3 {
+  margin-bottom: 10px;
+  color: #4a148c;
+  font-size: 1.2rem;
+}
+
+.faq-card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.faq-card:hover {
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  color: #fff;
+  transform: translateY(-5px);
+}
+
+.faq-card:hover h3,
+.faq-card:hover p {
+  color: #fff;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(120deg,#f0f0f0,#d9d9f0);
+  color:#fff;
+}
+
+.page-title {
+  text-align:center;
+  margin:40px 0;
+  font-size:2rem;
+  color:#4a148c;
+}
+
+/* Stream Cards */
+.streams-container {
+  display:flex;
+  flex-direction:column;
+  gap:50px;
+  width:90%;
+  margin:auto;
+}
+
+.stream-card {
+  background: rgba(30,30,47,0.7);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  border:4px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.stream-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow:0 20px 50px rgba(0,0,0,0.7);
+}
+
+.stream-card h2 {
+  font-size:2rem;
+  background: var(--accent);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.stream-card p {
+  margin:15px 0 30px 0;
+  color:#ddd;
+}
+
+/* Subcourse Grid */
+.subcourses-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  perspective: 1500px;
+}
+
+/* 3D Flip Cards */
+.subcourse-card {
+  width:100%;
+  height:300px;
+  perspective: 1500px;
+}
+
+.card-inner {
+  position:relative;
+  width:100%;
+  height:100%;
+  transition: transform 0.8s cubic-bezier(0.4,0.2,0.2,1);
+  transform-style: preserve-3d;
+  cursor:pointer;
+  border-radius:15px;
+}
+
+.subcourse-card:hover .card-inner {
+  transform: rotateY(180deg) rotateX(5deg);
+}
+
+.card-front, .card-back {
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:15px;
+  backface-visibility: hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  color:#1e1e2f;
+}
+
+/* Front */
+.card-front {
+  background: rgba(255,255,255,0.95);
+  font-weight:600;
+  font-size:1.1rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.card-front i {
+  font-size:2.5rem;
+  color: #4a148c;
+  margin-bottom:15px;
+  transition: transform 0.5s, color 0.5s;
+}
+
+.subcourse-card:hover .card-front i {
+  transform: rotate(360deg) scale(1.2);
+  color:#ff6a00;
+}
+
+/* Back */
+.card-back {
+  background: rgba(255,255,255,0.95);
+  transform: rotateY(180deg);
+  font-size:0.9rem;
+  overflow-y:auto;
+}
+
+.card-back ul {
+  list-style: disc;
+  padding-left:20px;
+  margin:0;
+}
+
+/* Scrollbar for back content */
+.card-back::-webkit-scrollbar {
+  width:6px;
+}
+
+.card-back::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius:3px;
+}
+
+/* Responsive */
+@media screen and (max-width:768px){
+  .page-title { font-size:2.2rem; }
+  .subcourses-grid { grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); }
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+body {
+  margin:0;
+  font-family:'Poppins',sans-serif;
+  background: linear-gradient(120deg,#f0f0f0,#d9d9f0);
+  color:#fff;
+}
+
+.page-title {
+  text-align:center;
+  margin:40px 0;
+  font-size:2.5rem;
+  color:#000000;
+}
+
+/* Stream Cards */
+.streams-container {
+  display:flex;
+  flex-direction:column;
+  gap:50px;
+  width:90%;
+  margin:auto;
+}
+
+.stream-card {
+  background: rgba(30,30,47,0.7);
+  border-radius:20px;
+  padding:30px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.5);
+  border:4px solid transparent;
+  background-clip: padding-box;
+  position: relative;
+  transition: transform 0.4s;
+}
+
+.stream-card:hover {
+  transform: translateY(-10px) scale(1.02);
+}
+
+.stream-card h2 {
+  font-size:2rem;
+  background: var(--accent);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.stream-card p {
+  margin:15px 0 30px 0;
+  color:#ddd;
+}
+
+/* Subcourse Grid */
+.subcourses-grid {
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  perspective: 1000px;
+}
+
+/* 3D Flip Cards */
+.subcourse-card {
+  width:100%;
+  height:280px;
+  perspective: 1000px;
+}
+
+.card-inner {
+  position:relative;
+  width:100%;
+  height:100%;
+  transition: transform 0.8s cubic-bezier(0.4,0.2,0.2,1);
+  transform-style: preserve-3d;
+  cursor:pointer;
+  border-radius:15px;
+}
+
+.card-front, .card-back {
+  position:absolute;
+  width:100%;
+  height:100%;
+  border-radius:15px;
+  backface-visibility: hidden;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  box-shadow:0 8px 20px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+  color:#1e1e2f;
+}
+
+.card-front {
+  background: rgba(255,255,255,0.95);
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.card-front i {
+  font-size:2.5rem;
+  color: #4a148c;
+  margin-bottom:15px;
+  transition: transform 0.5s;
+}
+
+.card-back {
+  background: rgba(255,255,255,0.95);
+  transform: rotateY(180deg);
+  font-size:0.9rem;
+  overflow-y:auto;
+}
+
+.card-back ul {
+  list-style: disc;
+  padding-left:20px;
+  margin:0;
+}
+/* Make subcourses in one horizontal line */
+.subcourses-grid {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for modern look */
+.subcourses-grid::-webkit-scrollbar {
+  display: none;
+}
+.subcourses-grid {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Increase font sizes */
+.card-front, .card-back {
+  font-size: 1.2rem; /* bigger text */
+}
+
+.card-front h3 {
+  font-size: 1.4rem; /* bigger title */
+}
+
+.card-back ul li {
+  font-size: 1.1rem; /* bigger list */
+}
+
+.card .highlight {
+  background: rgba(255, 255, 255, 0.1); /* subtle highlight */
+  padding: 10px 15px;
+  border-left: 4px solid #ffcc00; /* gold accent */
+  border-radius: 8px;
+  margin: 8px 0;
+  transition: all 0.3s ease;
+  font-weight: 600;
+}
+
+.card .highlight:hover {
+  background: rgba(255, 255, 255, 0.25); /* brighten on hover */
+  transform: translateX(5px); /* small slide effect */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+/* 🎓 Scholarships / Courses Cards */
+.scholarships .card {
+  background: linear-gradient(135deg, #f9f9f9, #e6e6e6); /* soft gray background */
+  color: #333; /* dark text for readability */
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.scholarships .card h3,
+.scholarships .card p {
+  color: #222; /* ensure text is always visible */
+}
+
+.scholarships .card:hover {
+  background: linear-gradient(135deg, #9a17ff, #6200ff); /* blue gradient hover */
+  color: #fff; /* make text white on hover */
+  transform: translateY(-8px); /* lift effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.scholarships .card:hover h3,
+.scholarships .card:hover p {
+  color: #fff; /* text turns white on hover */
+}
+/* ✨ Highlight Cards (Arts, Commerce, Science quick cards) */
+.highlight-card {
+  background: linear-gradient(135deg, #f9f9f9, #838181); /* soft gray background */
+  color: #333; /* dark text for readability */
+  border-radius: 12px;
+  padding: 25px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.highlight-card h3,
+.highlight-card p,
+.highlight-card a {
+  color: #222; /* ensure text is visible */
+}
+
+.highlight-card:hover {
+  background: linear-gradient(135deg, #369eff, #8940ff); /* blue gradient hover */
+  color: #fff; /* text turns white */
+  transform: translateY(-8px); /* lift effect */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.highlight-card:hover h3,
+.highlight-card:hover p,
+.highlight-card:hover a {
+  color: #040008; /* ensure text stays white on hover */
+}
+
+/* Dropdown stays readable */
+.highlight-card .dropdown-list {
+  background: rgba(255, 255, 255, 0.95);
+  color: #ffffff;
+  border-radius: 8px;
+  padding: 8px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.highlight-card:hover .dropdown-list {
+  background: rgba(0, 0, 0, 0.3);
+  color: #bab9b9;
+}
+/* 🎓 College Finder Section */
+.college-finder {
+  margin: 60px auto;
+  max-width: 900px;
+  padding: 30px;
+  text-align: center;
+  background: linear-gradient(135deg, #f9f9f9, #e6e6e6);
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.college-finder h2 {
+  font-size: 1.8rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.filters {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.filters select {
+  padding: 12px 18px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.filters select:hover {
+  border-color: #4facfe;
+}
+
+.college-results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.college-results .college-card {
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.college-results .college-card:hover {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  color: #fff;
+  transform: translateY(-6px);
+}
+.college-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.college-card p {
+  margin: 6px 0;
+  font-size: 0.95rem;
+}
+
+.college-card a {
+  color: #0077ff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.college-card a:hover {
+  color: #ff6600;
+}
+.college-results .college-card {
+  background: #4a148c; /* deep purple for visibility */
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  color: #fff; /* text color */
+  transition: 0.4s ease;
+}
+
+.college-results .college-card:hover {
+  background: linear-gradient(135deg, #6d6b6b, #a19f9b); /* bright orange-gold gradient */
+  color: #1e1e1e; /* dark text on bright background */
+  transform: translateY(-6px) scale(1.03); /* slight scale effect */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25); /* stronger shadow on hover */
+}
+
+.college-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.25rem;
+  color: inherit; /* inherits white normally, dark on hover */
+}
+
+.college-card p {
+  margin: 6px 0;
+  font-size: 1rem;
+  color: inherit;
+}
+
+.college-card a {
+  color: #ffca28; /* visible gold link */
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+.college-card a:hover {
+  color: #fff; /* invert to white on hover */
+}
+.hero-btn {
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #8e2de2, #4a148c);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255,255,255,0.2);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.hero-btn:hover::before {
+  top: -20%;
+  left: -20%;
+}
+
+.hero-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  background: linear-gradient(135deg, #6a1b9a, #7b1fa2);
+}
+/* Container for hero buttons */
+.hero-buttons {
+  display: flex;
+  gap: 20px; /* space between buttons */
+  flex-wrap: wrap; /* stack buttons on smaller screens */
+  justify-content: center;
+  margin-top: 15px;
+}
+
+/* Ensure buttons remain consistent */
+.hero-buttons .hero-btn {
+  min-width: 180px; /* optional, keeps buttons same width */
+}
