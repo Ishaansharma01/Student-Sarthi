@@ -860,3 +860,43 @@ nav {
   background: linear-gradient(90deg, #ffca28 0%, #222 100%);
   color: #222;
 }
+.hero-btn {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  background: linear-gradient(135deg, #8e2de2, #4a148c);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-btn::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: rgba(255,255,255,0.2);
+  transform: rotate(45deg);
+  transition: all 0.5s ease;
+}
+
+.hero-btn:hover::before {
+  top: -20%;
+  left: -20%;
+}
+
+.hero-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.35);
+  background: linear-gradient(135deg, #6a1b9a, #7b1fa2);
+}
