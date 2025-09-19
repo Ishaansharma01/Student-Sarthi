@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CodeZ</title>
+  <title>StudentSathi</title>
   <link rel="stylesheet" href="stylemain.css">
   <head>
   <meta charset="UTF-8" />
@@ -125,11 +125,11 @@
 <body>
   <!-- Navbar -->
   <nav>
-    <h1>CodeZ</h1>
+    <h1>StudentSathi</h1>
     <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()">☰</button>
     <ul id="menu">
       <li><a href="codeZ.html">Home</a></li>
-      <li><a href="#">Careers</a></li>
+      <li><a href="careers.html">Careers</a></li>
       <li><a href="courses.html">Courses</a></li>
       <li><a href="scholarship.html">Scholarships</a></li>
       <li><a href="#login">Login</a></li>
@@ -144,9 +144,9 @@
   <!-- Hero Section -->
   <section class="hero" id="home">
     <div class="hero-text">
-      <h2>Welcome to CodeZ</h2>
+      <h2>Welcome to StudentSathi</h2>
       <p>Your one-stop platform for Careers, Courses, and Scholarships.</p>
-      <a href="#careers" class="btn">Get Started</a>
+      <a href="#" id="open-quiz-modal" class="btn">Get Started</a>
     </div>
   </section>
 <section aria-label="Feature highlights">
@@ -169,7 +169,7 @@
         <div>
           <h3>Career Quizzes</h3>
           <p>Our interactive quizzes help you discover your strengths and interests to find the perfect career path.</p>
-          <a href="#">Learn more →</a>
+          <a href="#" id="open-quiz-from-slide">Learn more →</a>
         </div>
       </div>
 
@@ -192,6 +192,15 @@
       </div>
     </div>
    
+  <!-- dots -->
+    <div class="controls" id="dots">
+      <button class="dot active" onclick="goToSlide(0)"></button>
+      <button class="dot" onclick="goToSlide(1)"></button>
+      <button class="dot" onclick="goToSlide(2)"></button>
+    </div>
+  </div>
+</section>
+
 <!-- FAQ Section -->
 <section class="faq-section">
   <h2>Frequently Asked Questions</h2>
@@ -219,10 +228,7 @@
         <p>Use our scholarship finder with filters for academic level, location, category, eligibility, deadlines, and more—so you quickly discover opportunities you qualify for.</p>
       </div>
     </div>
-
-  </div>
-</section>
- <!--About-->
+    <!--About-->
 <!-- About Section -->
 <section class="about-section">
   <div class="about-header">
@@ -284,14 +290,7 @@
 
 
 
-    <!-- dots -->
-    <div class="controls" id="dots">
-      <button class="dot active" onclick="goToSlide(0)"></button>
-      <button class="dot" onclick="goToSlide(1)"></button>
-      <button class="dot" onclick="goToSlide(2)"></button>
-    </div>
-  </div>
-</section>
+  
 
 <script>
   let index = 0;
@@ -319,16 +318,79 @@
   setInterval(nextSlide, 4500);
 </script>
 
+    <!-- Quiz Modal (inline) -->
+    <div class="modal-overlay" id="quiz-modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card" role="document">
+        <div class="modal-header">
+          <div class="modal-title">Quick Career Quiz</div>
+          <button class="modal-close" id="quiz-close" aria-label="Close">×</button>
+        </div>
+        <div class="modal-body">
+          <form id="quiz-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="q-level">Current education level</label>
+                <select id="q-level" required>
+                  <option value="">Select...</option>
+                  <option>Class 11-12 (Science)</option>
+                  <option>Class 11-12 (Commerce)</option>
+                  <option>Class 11-12 (Arts/Humanities)</option>
+                  <option>Undergraduate</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Which subjects do you enjoy most?</label>
+                <div class="checklist">
+                  <label class="check-item"><input type="checkbox" name="q-sub" value="biology"> Biology</label>
+                  <label class="check-item"><input type="checkbox" name="q-sub" value="chemistry"> Chemistry</label>
+                  <label class="check-item"><input type="checkbox" name="q-sub" value="physics"> Physics</label>
+                  <label class="check-item"><input type="checkbox" name="q-sub" value="math"> Mathematics</label>
+                </div>
+              </div>
+
+              <div class="form-group" style="grid-column: span 2;">
+                <label>What are your interests?</label>
+                <div class="checklist">
+                  <label class="check-item"><input type="checkbox" name="q-int" value="health"> Healthcare/Life Sciences</label>
+                  <label class="check-item"><input type="checkbox" name="q-int" value="research"> Research & Labs</label>
+                  <label class="check-item"><input type="checkbox" name="q-int" value="environment"> Environment/Sustainability</label>
+                  <label class="check-item"><input type="checkbox" name="q-int" value="teaching"> Teaching/Education</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="q-goal">Primary goal</label>
+                <select id="q-goal" required>
+                  <option value="">Select...</option>
+                  <option value="degree">Pursue a strong degree foundation</option>
+                  <option value="job">Become job-ready quickly</option>
+                  <option value="mbbs">Aim for MBBS/Medical later</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="modal-actions">
+              <button type="button" class="btn" id="quiz-reset">Reset</button>
+              <button type="submit" class="btn">See Result</button>
+            </div>
+          </form>
+
+          <div class="results" id="quiz-results" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
+
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 CodeZ | All Rights Reserved</p>
+    <p>&copy; 2025 StudentSathi | All Rights Reserved</p>
   </footer>
 
   <!-- JS -->
   <script>
     // Menu toggle for mobile
     function toggleMenu() {
-      document.getElementById("menu").classList.toggle("active");
+      document.getElementById('menu').classList.toggle('active');
     }
 
     // Dark mode logic (reusing style.css)
@@ -349,14 +411,94 @@
     };
     setTheme(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
   </script>
+
   <script>
-  document.querySelectorAll(".faq-question").forEach(btn => {
-    btn.addEventListener("click", () => {
-      const item = btn.parentElement;
-      item.classList.toggle("active");
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        item.classList.toggle('active');
+      });
     });
-  });
-</script>
+  </script>
+
+  <script>
+    // Inline quiz modal logic (open from slide Learn more and optional hero if present)
+    const quizModal = document.getElementById('quiz-modal');
+    const quizClose = document.getElementById('quiz-close');
+    const quizForm = document.getElementById('quiz-form');
+    const quizResults = document.getElementById('quiz-results');
+    const quizReset = document.getElementById('quiz-reset');
+    const openFromSlide = document.getElementById('open-quiz-from-slide');
+    const openFromHero = document.getElementById('open-quiz-modal'); // may not exist
+
+    function openQuiz() {
+      quizModal.classList.add('active');
+      quizModal.setAttribute('aria-hidden', 'false');
+    }
+    function closeQuiz() {
+      quizModal.classList.remove('active');
+      quizModal.setAttribute('aria-hidden', 'true');
+    }
+
+    if (openFromSlide) {
+      openFromSlide.addEventListener('click', (e) => { e.preventDefault(); openQuiz(); });
+    }
+    if (openFromHero) {
+      openFromHero.addEventListener('click', (e) => { e.preventDefault(); openQuiz(); });
+    }
+    quizClose.addEventListener('click', closeQuiz);
+    quizModal.addEventListener('click', (e) => { if (e.target === quizModal) closeQuiz(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && quizModal.classList.contains('active')) closeQuiz(); });
+
+    quizReset.addEventListener('click', () => { quizForm.reset(); quizResults.innerHTML = ''; });
+
+    function renderBioRecommendation() {
+      quizResults.innerHTML = `
+        <div class="recommendation-card">
+          <h4>Recommended Path: BSc with Biology</h4>
+          <p>Why this fits you:</p>
+          <ul>
+            <li>Strong interest/aptitude in Biology and Life Sciences.</li>
+            <li>Aligns with goals like higher studies, research, or healthcare careers.</li>
+          </ul>
+          <p style=\"margin-top:8px;\"><strong>Next steps:</strong> Shortlist BSc (Biology/Biotech/Microbiology) programs, build lab skills, and explore internships.</p>
+        </div>
+      `;
+    }
+
+    quizForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const level = document.getElementById('q-level').value;
+      const goal = document.getElementById('q-goal').value;
+      const subs = Array.from(document.querySelectorAll('input[name="q-sub"]:checked')).map(x => x.value);
+      const ints = Array.from(document.querySelectorAll('input[name="q-int"]:checked')).map(x => x.value);
+
+      if (!level || !goal || subs.length === 0 || ints.length === 0) {
+        quizResults.innerHTML = '<p style="color:#b00020;">Please answer all questions to see your result.</p>';
+        return;
+      }
+
+      let scoreBio = 0;
+      if (subs.includes('biology')) scoreBio += 3;
+      if (ints.includes('health')) scoreBio += 2;
+      if (ints.includes('research')) scoreBio += 1;
+      if (level.includes('Science')) scoreBio += 1;
+      if (goal === 'degree' || goal === 'mbbs') scoreBio += 1;
+
+      if (scoreBio >= 3) {
+        renderBioRecommendation();
+      } else {
+        quizResults.innerHTML = `
+          <div class="recommendation-card">
+            <h4>Suggestion: Explore BSc with Biology</h4>
+            <p>Your inputs hint at potential in life sciences. Consider Biology-related paths and compare with your other interests.</p>
+            <p style=\"margin-top:8px;\">You can retake the quiz and select Biology/Healthcare/Research if that resonates more.</p>
+          </div>
+        `;
+      }
+    });
+  </script>
 
 
 </body>
