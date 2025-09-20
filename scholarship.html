@@ -525,6 +525,48 @@
       function updateToasts(){
         const items = collectClosingSoon();
         renderToasts(items);
+        annotateBadges(items);
+      }
+
+      // Add small badges to cards and highlight by urgency
+      function annotateBadges(items){
+        const allCards = Array.from(document.querySelectorAll('.scholarships .card'));
+        // Clear previous badges and outlines
+        allCards.forEach(card => {
+          card.querySelectorAll('.closing-badge').forEach(b => b.remove());
+          card.style.outline = '';
+        });
+
+        if (!items || !items.length) return;
+
+        items.forEach(({card, days}) => {
+          // Ensure positioning
+          if (!card.style.position) card.style.position = 'relative';
+          const badge = document.createElement('div');
+          badge.className = 'closing-badge';
+          const urgent = days <= 3;
+          const soon = days <= 7;
+          const bg = urgent ? '#ef4444' : soon ? '#f59e0b' : '#ffca28';
+          const text = days === 0 ? 'Today' : `${days}d left`;
+          // Badge styles
+          Object.assign(badge.style, {
+            position: 'absolute',
+            top: '10px',
+            right: '10px',
+            background: bg,
+            color: '#111',
+            fontWeight: '700',
+            fontSize: '0.75rem',
+            padding: '4px 8px',
+            borderRadius: '999px',
+            boxShadow: '0 2px 6px rgba(0,0,0,0.15)',
+            zIndex: '1'
+          });
+          badge.textContent = text;
+          card.appendChild(badge);
+          // Highlight outline
+          card.style.outline = `2px solid ${bg}`;
+        });
       }
 
       // Run on load
