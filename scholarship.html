@@ -3,451 +3,503 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Scholarship Portal</title>
-  <link rel="stylesheet" href="Scholarshipstyle.css">
+  <title>StudentSathi</title>
+  <link rel="stylesheet" href="stylemain.css">
+  <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Features Carousel</title>
+  <style>
+    body {
+      background: #111827;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    section {
+      position: relative;
+      padding: 3rem 1rem;
+      overflow: hidden;
+    }
+    .carousel-container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 1.5rem;
+    }
+    .slides {
+      display: flex;
+      transition: transform 0.7s ease-in-out;
+    }
+    .slide {
+      min-width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+      padding: 2rem;
+      background: linear-gradient(to bottom right, #1f2937, #111827);
+      border-radius: 1rem;
+    }
+    .slide img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      border: 2px solid #374151;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+    }
+    .slide h3 {
+      font-size: 1.8rem;
+      color: #93c5fd;
+    }
+    .slide p {
+      margin-top: 0.5rem;
+      color: #d1d5db;
+    }
+    .slide a {
+      display: inline-flex;
+      align-items: center;
+      margin-top: 1rem;
+      padding: 0.6rem 1.2rem;
+      border: 1px solid #6366f1;
+      border-radius: 999px;
+      color: #93c5fd;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    .slide a:hover {
+      background: #6366f1;
+      color: #fff;
+    }
+    .controls {
+      display: flex;
+      gap: 0.5rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #4b5563;
+      border: none;
+      cursor: pointer;
+      transition: width 0.3s;
+    }
+    .dot.active {
+      width: 30px;
+      background: #6366f1;
+      border-radius: 10px;
+    }
+    .nav-btns {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .nav-btn {
+      background: #1f2937;
+      border: 1px solid #374151;
+      color: #fff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    .nav-btn:hover {
+      background: #374151;
+    }
+    @media(max-width: 768px) {
+      .slide {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
-
 <body>
   <!-- Navbar -->
   <nav>
-    <h1>Student sarthi</h1>
+    <h1>StudentSathi</h1>
     <button class="menu-toggle" id="menu-toggle" onclick="toggleMenu()">☰</button>
     <ul id="menu">
-      <li><a href="main.html">Home</a></li>
-       <li><a href="#">Careers</a></li>
+      <li><a href="codeZ.html">Home</a></li>
+      <li><a href="careers.html">Careers</a></li>
       <li><a href="courses.html">Courses</a></li>
       <li><a href="scholarship.html">Scholarships</a></li>
-      
-      <!-- 🌗 Dark Mode Toggle -->
-      <button id="theme-toggle" class="theme-btn">🌙</button>
-    </li>
+      <li><a href="#login">Login</a></li>
+      <li><a href="#signup">Signup</a></li>
+      <li>
+        <!-- 🌗 Dark Mode Toggle -->
+        <button id="theme-toggle" class="theme-btn">🌙</button>
+      </li>
     </ul>
   </nav>
-<!-- Hero with Slider -->
-<section class="hero" id="home">
-  <div class="slider">
-    <div class="slide active" style="background-image: url('https://hips.hearstapps.com/hmg-prod/images/graduation-captions-lead-image-6412222f98500.jpg?crop=1xw:0.8423586572438162xh;0,0');"></div>
-    <div class="slide" style="background-image: url('https://registrar.utdallas.edu/files/2024/09/AUC-13.jpg');"></div>
-    <div class="slide" style="background-image: url('https://www.vancopayments.com/hs-fs/hubfs/Graduation%20-%20Cap%20throw.png?width=1640&height=924&name=Graduation%20-%20Cap%20throw.png');"></div>
-  </div>
-  <div class="hero-text">
-    <h2>Find Scholarships Easily</h2>
-    <p>Helping students connect with opportunities across India and abroad</p>
-    <button class="btn explore-btn" onclick="scrollToHighlights()">Explore Scholarships</button>
-  </div>
-</section>
-<!-- 3 Highlight Cards with Dropdown (Hover) -->
-<section class="highlight-cards">
-  <div class="highlight-card">
-    <h3>🏛️ State Scholarships</h3>
-    <p>Financial aid provided by state governments across India.</p>
-    <ul class="dropdown-list">
-      <li><a href="https://scholarships.gov.in/" target="_blank">MP Post Matric Scholarship</a></li>
-      <li><a href="https://scholarship.up.gov.in/" target="_blank">UP Pre-Matric Scholarship</a></li>
-      <li><a href="https://mahadbt.maharashtra.gov.in/" target="_blank">Maharashtra Open Merit Scholarship</a></li>
-    </ul>
-  </div>
-  <div class="highlight-card">
-    <h3>🏫 School Scholarships</h3>
-    <p>Scholarships for meritorious school students.</p>
-    <ul class="dropdown-list">
-      <li><a href="https://scholarships.gov.in/" target="_blank">National Means-cum-Merit Scholarship</a></li>
-      <li><a href="https://www.cbse.gov.in/" target="_blank">CBSE Merit Scholarship</a></li>
-      <li><a href="https://kvpy.iisc.ac.in/" target="_blank">KVPY Fellowship</a></li>
-    </ul>
-  </div>
-  <div class="highlight-card">
-    <h3>🌏 Abroad Scholarships</h3>
-    <p>Opportunities for studying in foreign universities.</p>
-    <ul class="dropdown-list">
-      <li><a href="https://www.usief.org.in/" target="_blank">Fulbright-Nehru Scholarship</a></li>
-      <li><a href="https://www.chevening.org/" target="_blank">Chevening Scholarship</a></li>
-      <li><a href="https://www.daad.de/en/" target="_blank">DAAD Scholarship (Germany)</a></li>
-    </ul>
-  </div>
-</section>
 
-<!-- Move the search bar here, after highlight-cards and before state-scholarships -->
-<section style="text-align:center; margin: 30px 0;">
-  <input type="text" id="scholarship-search" placeholder="Search scholarships..." style="padding:10px 18px; border-radius:8px; border:1.5px solid #4a148c; width: 260px; font-size:1rem;">
-</section>
-
-<!-- State Scholarships Section -->
-<section class="state-scholarships">
-  <h2>State Scholarships</h2>
-  <p style="color:#555; margin-bottom:18px; font-size:1.08rem;">Select your state to discover scholarships available for you.</p>
-  <div class="state-arrow">
-    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M12 5v14m0 0l-7-7m7 7l7-7" stroke="#4a148c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-    </svg>
-  </div>
-  <div class="state-box">
-    <label for="state">Choose State:</label>
-    <select id="state" onchange="filterScholarships()">
-      <option value="">--Select--</option>
-      <option value="Andhra Pradesh">Andhra Pradesh</option>
-      <option value="Arunachal Pradesh">Arunachal Pradesh</option>
-      <option value="Assam">Assam</option>
-      <option value="Bihar">Bihar</option>
-      <option value="Chhattisgarh">Chhattisgarh</option>
-      <option value="Goa">Goa</option>
-      <option value="Gujarat">Gujarat</option>
-      <option value="Haryana">Haryana</option>
-      <option value="Himachal Pradesh">Himachal Pradesh</option>
-      <option value="Jharkhand">Jharkhand</option>
-      <option value="Karnataka">Karnataka</option>
-      <option value="Kerala">Kerala</option>
-      <option value="Madhya Pradesh">Madhya Pradesh</option>
-      <option value="Maharashtra">Maharashtra</option>
-      <option value="Manipur">Manipur</option>
-      <option value="Meghalaya">Meghalaya</option>
-      <option value="Mizoram">Mizoram</option>
-      <option value="Nagaland">Nagaland</option>
-      <option value="Odisha">Odisha</option>
-      <option value="Punjab">Punjab</option>
-      <option value="Rajasthan">Rajasthan</option>
-      <option value="Sikkim">Sikkim</option>
-      <option value="Tamil Nadu">Tamil Nadu</option>
-      <option value="Telangana">Telangana</option>
-      <option value="Tripura">Tripura</option>
-      <option value="Uttar Pradesh">Uttar Pradesh</option>
-      <option value="Uttarakhand">Uttarakhand</option>
-      <option value="West Bengal">West Bengal</option>
-      <!-- Union Territories -->
-      <option value="Delhi">Delhi</option>
-      <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
-      <option value="Chandigarh">Chandigarh</option>
-      <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra & Nagar Haveli and Daman & Diu</option>
-      <option value="Jammu and Kashmir">Jammu and Kashmir</option>
-      <option value="Ladakh">Ladakh</option>
-      <option value="Lakshadweep">Lakshadweep</option>
-      <option value="Puducherry">Puducherry</option>
-    </select>
-  </div>
-</section>
- <!-- Container for Scholarships -->
-  <section id="state-scholarships-list" class="scholarship-list"></section>
-
-  <!-- Scholarships -->
-  <section class="scholarships">
-
-    <!-- Madhya Pradesh (3 Scholarships) -->
-    <div class="card" data-state="Madhya Pradesh" data-id="mp-post-matric">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>MP Post Matric Scholarship</h3>
-      <p>For SC/ST/OBC students pursuing UG/PG. <br> Deadline: 25 Oct 2025</p>
-      <a href="https://hescholarship.mp.gov.in/Public/OtherSchemes/GB.aspx?ID=MTM=" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-      <button class="upvote-btn" onclick="upvoteScholarship('mp-post-matric', this)" style="margin-top:10px;background:#ffca28;color:#4a148c;border:none;border-radius:8px;padding:6px 16px;font-weight:600;cursor:pointer;">
-        👍 Upvote <span class="upvote-count">0</span>
-      </button>
-    </div>
-    <div class="card" data-state="Madhya Pradesh">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>Gaon Ki Beti Scholarship (MP)</h3>
-      <p>For rural girl students who passed Class 12 with first division. <br> Deadline: 15 Nov 2025</p>
-      <a href="https://hescholarship.mp.gov.in/Public/Check_EKYC.aspx?ID=Mw==" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </div>
-    <div class="card" data-state="Madhya Pradesh">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>Mukhyamantri Medhavi Vidyarthi Yojna (MMVY)</h3>
-      <p>For meritorious students entering undergraduate courses. <br> Deadline: 19 Sept 2025</p>
-      <a href="https://www.medhavikalyan.mp.gov.in/MMVY.aspx" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </div>
-    <div class="card" data-state="Madhya Pradesh">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>Mukhyamantri Jankalyan (Shiksha protshan) Yojna (MMJKY)</h3>
-      <p>For meritorious students entering undergraduate courses. <br> Deadline: 20 Sept 2025</p>
-      <a href="https://www.medhavikalyan.mp.gov.in/sambalscholarship/default.aspx#" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </div>
-    <!-- Other states (sample scholarships, expand later) -->
-    </div>
-    <div class="card" data-state="Madhya Pradesh">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>Reliance Foundation Undergraduate scholarship</h3>
-      <p>For UG students<br> Deadline: 04 Oct 2025</p>
-      <a href="https://scholarships.reliancefoundation.org/UG_Scholarship.aspx#divclickheretoapply" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </div> 
-    <div class="card" data-state="Maharashtra">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>Infosys foundation stem stars scholarship 2025-26</h3>
-      <p>Students must be enrolled in first-year undergraduate courses at reputable (NIRF-accredited) institutions in STEM-related courses. <br> Deadline: 15 Sept 2025</p>
-      <a href="https://www.buddy4study.com/application/ISTS3/instruction" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </div>
-    <div class="card" data-state="Maharashtra">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>NSP Post-Matric Scholarship Scheme for ST Students, Jammu and Kashmir 2025-26</h3>
-      <p>Post-Matric Scholarship Scheme for ST Students, Jammu and Kashmir 2025-26 is an initiative for ST students of the state pursuing higher studies after completing Class 10. <br> Deadline: 15 Sept 2025</p>
-      <a href="https://scholarships.gov.in/" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </div>
-    </div>
-    <div class="card" data-state="Madhya Pradesh">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>Reliance Foundation Postgraduate scholarship</h3>
-      <p>For PG students<br> Deadline: 04 Oct 2025</p>
-      <a href="https://scholarships.reliancefoundation.org/PG_Scholarship.aspx#divclickheretoapply" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </div>
-    <div class="card" data-state="Karnataka">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>Karnataka Merit Scholarship</h3>
-      <p>For UG students. <br> Deadline: 15 Oct 2025</p>
-      <a href="https://ssp.karnataka.gov.in/" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </div>
-    <div class="card" data-state="Delhi">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>Delhi Minority Scholarship</h3>
-      <p>For minority students. <br> Deadline: 20 Sept 2025</p>
-      <a href="https://dmc.delhi.gov.in/dmc/welfare-schemes" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </div>
-    <div class="card" data-state="Tamil Nadu">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>Tamil Nadu Education Scholarship</h3>
-      <p>For PG students. <br> Deadline: 10 Oct 2025</p>
-      <a href="https://tndce.tn.gov.in/Home/scholarship" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </div>
-    <div class="card" data-state="Uttar Pradesh">
-      <img src="https://img.icons8.com/color/96/000000/graduation-cap.png" alt="Scholarship" class="scholarship-img">
-      <h3>UP Pre-Matric Scholarship</h3>
-      <p>For students of Class 9 & 10. <br> Deadline: 12 Oct 2025</p>
-      <a href="#" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-    </div>
-
-    <!-- You can keep adding similar blocks for each state -->
-  </section>
-
-  <!-- Reviews Section -->
-  <section class="reviews" style="background:#f3e5f5; padding:40px 0; text-align:center;">
-    <h2 style="color:#4a148c; margin-bottom:30px;">What Our Users Say</h2>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:24px;">
-      <div class="card review-card" style="max-width:320px; min-width:220px;">
-        <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Priya Sharma" class="review-img" style="width:60px;height:60px;border-radius:50%;margin-bottom:10px;object-fit:cover;">
-        <h3>Priya Sharma</h3>
-        <p>"This portal helped me find the perfect scholarship for my studies. The process was easy and quick!"</p>
-      </div>
-      <div class="card review-card" style="max-width:320px; min-width:220px;">
-        <img src="https://randomuser.me/api/portraits/men/65.jpg" alt="Rahul Verma" class="review-img" style="width:60px;height:60px;border-radius:50%;margin-bottom:10px;object-fit:cover;">
-        <h3>Rahul Verma</h3>
-        <p>"I love the user-friendly interface and the up-to-date information. Highly recommended for all students!"</p>
-      </div>
-      <div class="card review-card" style="max-width:320px; min-width:220px;">
-        <img src="https://randomuser.me/api/portraits/women/43.jpg" alt="Anjali Singh" class="review-img" style="width:60px;height:60px;border-radius:50%;margin-bottom:10px;object-fit:cover;">
-        <h3>Anjali Singh</h3>
-        <p>"Thanks to this website, I secured a scholarship for my higher education. Thank you so much!"</p>
-      </div>
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h2>Welcome to StudentSathi</h2>
+      <p>Your one-stop platform for Careers, Courses, and Scholarships.</p>
+      <a href="#" id="open-quiz-modal" class="btn">Get Started</a>
     </div>
   </section>
+<section aria-label="Feature highlights">
+  <div class="carousel-container">
+    <header>
+      <div>
+        <h2>Discover your path</h2>
+        <p style="color:#9ca3af;">Smart guidance across careers, courses, and scholarships.</p>
+      </div>
+      <div class="nav-btns">
+        <button class="nav-btn" onclick="prevSlide()">&#8592;</button>
+        <button class="nav-btn" onclick="nextSlide()">&#8594;</button>
+      </div>
+    </header>
 
-  <!-- Feedback Form Section -->
-<section class="feedback-section" style="background:#fff; padding:36px 0; text-align:center;">
-  <h2 style="color:#4a148c; margin-bottom:18px;">We Value Your Feedback</h2>
-  <form id="feedback-form" style="max-width:400px;margin:0 auto;">
-    <textarea id="feedback-text" rows="4" placeholder="Share your experience or suggestions..." style="width:100%;padding:12px;border-radius:8px;border:1.5px solid #b39ddb;margin-bottom:12px;font-size:1rem;"></textarea>
-    <br>
-    <button type="submit" class="btn" style="width:100%;">Submit Feedback</button>
-    <div id="feedback-message" style="margin-top:10px;color:#388e3c;font-weight:600;display:none;">Thank you for your feedback!</div>
-  </form>
+    <!-- slides -->
+    <div class="slides" id="slides">
+      <div class="slide">
+        <div><img src="carousel1.svg" alt="Career Quizzes"></div>
+        <div>
+          <h3>Career Quizzes</h3>
+          <p>Our interactive quizzes help you discover your strengths and interests to find the perfect career path.</p>
+          <a href="#" id="open-quiz-from-slide">Learn more →</a>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div><img src="carousel2.svg" alt="Course Guidance"></div>
+        <div>
+          <h3>Course Guidance</h3>
+          <p>Explore a curated list of courses and educational programs that align with your career goals.</p>
+          <a href="courses.html">Learn more →</a>
+        </div>
+      </div>
+
+      <div class="slide">
+        <div><img src="carousel3.svg" alt="Scholarship Search"></div>
+        <div>
+          <h3>Scholarship Search</h3>
+          <p>Discover scholarships and financial aid opportunities to make your educational dreams a reality.</p>
+          <a href="scholarship.html">Learn more →</a>
+        </div>
+      </div>
+    </div>
+   
+  <!-- dots -->
+    <div class="controls" id="dots">
+      <button class="dot active" onclick="goToSlide(0)"></button>
+      <button class="dot" onclick="goToSlide(1)"></button>
+      <button class="dot" onclick="goToSlide(2)"></button>
+    </div>
+  </div>
 </section>
 
-  <!-- About -->
-  <section class="about" id="about">
-    <h2>About Us</h2>
-    <p>We aim to bridge the gap between students and opportunities by providing updated scholarship information for all states and union territories of India.</p>
-  </section>
+<!-- FAQ Section -->
+<section class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <p class="faq-subtitle">Quick answers to common questions about StudentSathi.</p>
+  
+  <div class="faq-container">
+
+    <div class="faq-item">
+      <button class="faq-question">1. How can I find the right career path?</button>
+      <div class="faq-answer">
+        <p>Take our guided Career Quizzes. We analyze your interests, skills, and personality to match you with suitable career domains, then suggest next steps and curated resources.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">2. Are the courses listed on StudentSathi free?</button>
+      <div class="faq-answer">
+        <p>We aggregate both free and paid courses. Filters let you choose by budget, level, duration, and learning goals so you can pick what works best for you.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">3. How do I search for scholarships?</button>
+      <div class="faq-answer">
+        <p>Use our scholarship finder with filters for academic level, location, category, eligibility, deadlines, and more—so you quickly discover opportunities you qualify for.</p>
+      </div>
+    </div>
+    <!--About-->
+<!-- About Section -->
+<section class="about-section">
+  <div class="about-header">
+    <h2>About StudentSathi</h2>
+    <p>We are on a mission to make future planning simple, data-driven, and accessible for every student.</p>
+  </div>
+
+  <div class="about-grid">
+    <div class="about-card">
+      <div class="emoji">🎯</div>
+      <h3>Our Goal</h3>
+      <p>
+        StudentSathi helps students identify strengths and discover careers they’ll love. 
+        We provide clarity with tailored insights and actionable next steps.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <div class="emoji">🤝</div>
+      <h3>Who We Are</h3>
+      <p>
+        A team of engineers, educators, and designers combining guidance counseling with modern tech 
+        to remove guesswork from academic and career choices.
+      </p>
+    </div>
+
+    <div class="about-card">
+      <div class="emoji">🧭</div>
+      <h3>What We Offer</h3>
+      <p>
+        Purpose-built quizzes, curated courses, and a scholarship finder — everything you need 
+        to progress from exploration to decision with confidence.
+      </p>
+    </div>
+  </div>
+
+  <div class="about-stats">
+    <div>
+      <p class="number">10K+</p>
+      <p>Students guided</p>
+    </div>
+    <div>
+      <p class="number">1K+</p>
+      <p>Courses curated</p>
+    </div>
+    <div>
+      <p class="number">500+</p>
+      <p>Scholarships tracked</p>
+    </div>
+  </div>
+
+  <p class="about-footer">
+    With StudentSathi, you move from uncertainty to clarity — one smart step at a time.
+  </p>
+</section>
+
+  </div>
+</section>
+
+
+
+  
+
+<script>
+  let index = 0;
+  const slides = document.getElementById("slides");
+  const dots = document.querySelectorAll(".dot");
+
+  function updateCarousel() {
+    slides.style.transform = `translateX(-${index * 100}%)`;
+    dots.forEach((d,i)=>d.classList.toggle("active", i===index));
+  }
+  function nextSlide() {
+    index = (index + 1) % 3;
+    updateCarousel();
+  }
+  function prevSlide() {
+    index = (index - 1 + 3) % 3;
+    updateCarousel();
+  }
+  function goToSlide(i) {
+    index = i;
+    updateCarousel();
+  }
+
+  // auto play
+  setInterval(nextSlide, 4500);
+</script>
+
+    <!-- Quiz Modal (inline) -->
+    <div class="modal-overlay" id="quiz-modal" aria-hidden="true" role="dialog" aria-modal="true">
+      <div class="modal-card" role="document">
+        <div class="modal-header">
+          <div class="modal-title">Quick Career Quiz</div>
+          <button class="modal-close" id="quiz-close" aria-label="Close">×</button>
+        </div>
+        <div class="modal-body">
+          <form id="quiz-form">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="q-level">Current education level</label>
+                <select id="q-level" required>
+                  <option value="">Select...</option>
+                  <option>Class 11-12 (Science)</option>
+                  <option>Class 11-12 (Commerce)</option>
+                  <option>Class 11-12 (Arts/Humanities)</option>
+                  <option>Undergraduate</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label>Which subjects do you enjoy most?</label>
+                <div class="checklist">
+                  <label class="check-item"><input type="checkbox" name="q-sub" value="biology"> Biology</label>
+                  <label class="check-item"><input type="checkbox" name="q-sub" value="chemistry"> Chemistry</label>
+                  <label class="check-item"><input type="checkbox" name="q-sub" value="physics"> Physics</label>
+                  <label class="check-item"><input type="checkbox" name="q-sub" value="math"> Mathematics</label>
+                </div>
+              </div>
+
+              <div class="form-group" style="grid-column: span 2;">
+                <label>What are your interests?</label>
+                <div class="checklist">
+                  <label class="check-item"><input type="checkbox" name="q-int" value="health"> Healthcare/Life Sciences</label>
+                  <label class="check-item"><input type="checkbox" name="q-int" value="research"> Research & Labs</label>
+                  <label class="check-item"><input type="checkbox" name="q-int" value="environment"> Environment/Sustainability</label>
+                  <label class="check-item"><input type="checkbox" name="q-int" value="teaching"> Teaching/Education</label>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="q-goal">Primary goal</label>
+                <select id="q-goal" required>
+                  <option value="">Select...</option>
+                  <option value="degree">Pursue a strong degree foundation</option>
+                  <option value="job">Become job-ready quickly</option>
+                  <option value="mbbs">Aim for MBBS/Medical later</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="modal-actions">
+              <button type="button" class="btn" id="quiz-reset">Reset</button>
+              <button type="submit" class="btn">See Result</button>
+            </div>
+          </form>
+
+          <div class="results" id="quiz-results" aria-live="polite"></div>
+        </div>
+      </div>
+    </div>
 
   <!-- Footer -->
-  <footer id="contact">
-    <p>&copy; 2025 Scholarship Portal | All Rights Reserved</p>
+  <footer>
+    <p>&copy; 2025 StudentSathi | All Rights Reserved</p>
   </footer>
 
+  <!-- JS -->
   <script>
-    function filterScholarships() {
-      const state = document.getElementById("state").value;
-      const cards = document.querySelectorAll(".card");
-      cards.forEach(card => {
-        if (state === "" || card.getAttribute("data-state") === state) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
-    }
-
+    // Menu toggle for mobile
     function toggleMenu() {
-      document.getElementById("menu").classList.toggle("active");
+      document.getElementById('menu').classList.toggle('active');
     }
 
-    function scrollToHighlights() {
-      const section = document.querySelector('.highlight-cards');
-      if(section) section.scrollIntoView({ behavior: 'smooth' });
-    }
-
-    function showCategory(category) {
-      const container = document.getElementById("scholarship-list");
-      container.innerHTML = `<h2>${category.charAt(0).toUpperCase() + category.slice(1)} Scholarships</h2>`;
-      scholarshipsData[category].forEach(sch => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-          <h3>${sch.title}</h3>
-          <p>${sch.desc}<br><strong>Deadline:</strong> ${sch.deadline}</p>
-          <a href="${sch.link}" class="btn" target="_blank" rel="noopener noreferrer">Apply Now</a>
-        `;
-        container.appendChild(card);
-      });
-      container.scrollIntoView({ behavior: "smooth" });
-    }
-
-    // Hero Slider Auto Change
-    let slideIndex = 0;
-    const slides = document.querySelectorAll(".slide");
-    function showSlides() {
-      slides.forEach((slide, i) => {
-        slide.classList.remove("active");
-      });
-      slideIndex = (slideIndex + 1) % slides.length;
-      slides[slideIndex].classList.add("active");
-    }
-    setInterval(showSlides, 4000); // change every 4 seconds
-
-    // Navbar toggle for mobile
-    const menuToggle = document.getElementById("menu-toggle");
-    const menu = document.getElementById("menu");
-    menuToggle.addEventListener("click", () => {
-      menu.classList.toggle("active");
-    });
-
-    // Scholarship search filter
-    document.getElementById('scholarship-search').addEventListener('input', function() {
-      const query = this.value.toLowerCase();
-      document.querySelectorAll('.scholarships .card').forEach(card => {
-        const text = card.innerText.toLowerCase();
-        card.style.display = text.includes(query) ? 'block' : 'none';
-      });
-    });
-
-    // Save theme preference
+    // Dark mode logic (reusing style.css)
     const themeToggle = document.getElementById('theme-toggle');
     function setTheme(mode) {
       if (mode === 'dark') {
         document.documentElement.classList.add('dark-mode');
-        themeToggle.textContent = 'Light Mode';
+        themeToggle.textContent = '☀️';
         localStorage.setItem('theme', 'dark');
       } else {
         document.documentElement.classList.remove('dark-mode');
-        themeToggle.textContent = 'Dark Mode';
+        themeToggle.textContent = '🌙';
         localStorage.setItem('theme', 'light');
       }
     }
     themeToggle.onclick = function() {
       setTheme(document.documentElement.classList.contains('dark-mode') ? 'light' : 'dark');
     };
-    // On load, set theme from localStorage
     setTheme(localStorage.getItem('theme') === 'dark' ? 'dark' : 'light');
+  </script>
 
-    // Feedback form logic
-    document.getElementById('feedback-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-      // Optionally, send feedback to server here
-      document.getElementById('feedback-message').style.display = 'block';
-      document.getElementById('feedback-text').value = '';
-      setTimeout(() => {
-        document.getElementById('feedback-message').style.display = 'none';
-      }, 2500);
-    });
-
-    // Upvote logic for scholarships
-    function upvoteScholarship(id, btn) {
-      let upvotes = parseInt(localStorage.getItem('upvote_' + id) || '0', 10);
-      upvotes += 1;
-      localStorage.setItem('upvote_' + id, upvotes);
-      btn.querySelector('.upvote-count').textContent = upvotes;
-      btn.disabled = true;
-      btn.style.opacity = 0.7;
-      btn.textContent = '👍 Upvoted ' + upvotes;
-    }
-
-    // Initialize upvote counts and disable if already upvoted
-    document.addEventListener('DOMContentLoaded', function() {
-      document.querySelectorAll('.card[data-id]').forEach(card => {
-        const id = card.getAttribute('data-id');
-        const btn = card.querySelector('.upvote-btn');
-        const count = parseInt(localStorage.getItem('upvote_' + id) || '0', 10);
-        btn.querySelector('.upvote-count').textContent = count;
-        if (localStorage.getItem('upvote_' + id)) {
-          btn.disabled = true;
-          btn.style.opacity = 0.7;
-          btn.textContent = '👍 Upvoted ' + count;
-        }
+  <script>
+    // FAQ accordion
+    document.querySelectorAll('.faq-question').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        item.classList.toggle('active');
       });
     });
-
-  // Chatbot logic
-  function toggleChatbot() {
-    const win = document.getElementById('chatbot-window');
-    win.style.display = win.style.display === 'block' ? 'none' : 'block';
-    if (win.style.display === 'block') {
-      setTimeout(() => {
-        document.getElementById('chatbot-input').focus();
-      }, 200);
-    }
-  }
-
-  // Simple Q&A pairs
-  const chatbotAnswers = [
-    { q: /hello|hi|hey/i, a: "Hello! How can I help you with scholarships today?" },
-    { q: /find.*scholarship|search.*scholarship/i, a: "You can use the search bar above the scholarships section to find scholarships by keyword." },
-    { q: /state.*scholarship/i, a: "Select your state in the 'State Scholarships' section to see scholarships available for your region." },
-    { q: /how.*apply/i, a: "Click the 'Apply Now' button on any scholarship card to visit the official application page." },
-    { q: /deadline/i, a: "Each scholarship card displays its deadline. Please check the card details." },
-    { q: /contact|support/i, a: "You can reach us via the contact section at the bottom of the page." },
-    { q: /dark.*mode|light.*mode/i, a: "Use the 'Dark Mode' or 'Light Mode' button in the navbar to switch themes." },
-    { q: /feedback/i, a: "We value your feedback! Please use the feedback form below the reviews section." },
-    { q: /.*/, a: "Sorry, I didn't understand that. Please ask about scholarships, application process, or site features." }
-  ];
-
-  function chatbotReply(msg) {
-    for (let pair of chatbotAnswers) {
-      if (pair.q.test(msg)) return pair.a;
-    }
-    return chatbotAnswers[chatbotAnswers.length - 1].a;
-  }
-
-  // Initialize chatbot once DOM is ready so elements exist
-  document.addEventListener('DOMContentLoaded', function() {
-    const chatbotForm = document.getElementById('chatbot-form');
-    const chatbotInput = document.getElementById('chatbot-input');
-    const chatbotMessages = document.getElementById('chatbot-messages');
-    if (!chatbotForm || !chatbotInput || !chatbotMessages) return;
-
-    chatbotForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      const userMsg = chatbotInput.value.trim();
-      if (!userMsg) return;
-      chatbotMessages.innerHTML += `<div style="margin-bottom:8px;text-align:right;"><span style="background:#e1bee7;color:#222;padding:7px 14px;border-radius:16px 16px 2px 16px;display:inline-block;">${userMsg}</span></div>`;
-      chatbotInput.value = '';
-      setTimeout(() => {
-        const reply = chatbotReply(userMsg);
-        chatbotMessages.innerHTML += `<div style="margin-bottom:8px;text-align:left;"><span style="background:#4a148c;color:#fff;padding:7px 14px;border-radius:16px 16px 16px 2px;display:inline-block;">${reply}</span></div>`;
-        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-      }, 600);
-      chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
-    });
-  });
   </script>
-  <!-- Floating Chatbot Button and Window -->
-<div id="chatbot-btn" style="position:fixed;bottom:32px;right:32px;z-index:9999;">
-  <button onclick="toggleChatbot()" style="background:#4a148c;color:#fff;border:none;border-radius:50%;width:56px;height:56px;box-shadow:0 2px 8px rgba(0,0,0,0.18);font-size:2rem;cursor:pointer;transition:background 0.3s;">💬</button>
-</div>
-<div id="chatbot-window" style="display:none;position:fixed;bottom:100px;right:32px;width:320px;max-width:90vw;background:#fff;border-radius:16px;box-shadow:0 4px 24px rgba(74,20,140,0.18);z-index:10000;overflow:hidden;">
-  <div style="background:#4a148c;color:#fff;padding:14px 18px;font-weight:600;display:flex;justify-content:space-between;align-items:center;">
-    <span>Ask Sarthi</span>
-    <button onclick="toggleChatbot()" style="background:none;border:none;color:#fff;font-size:1.2rem;cursor:pointer;">✖</button>
-  </div>
-  <div id="chatbot-messages" style="padding:14px 12px;height:220px;overflow-y:auto;font-size:1rem;background:#faf7fd;"></div>
-  <form id="chatbot-form" style="display:flex;border-top:1px solid #eee;">
-    <input id="chatbot-input" type="text" placeholder="Ask a question..." autocomplete="off" style="flex:1;padding:10px 12px;border:none;font-size:1rem;background:#f3e5f5;">
-    <button type="submit" style="background:#4a148c;color:#fff;border:none;padding:0 18px;font-size:1.1rem;cursor:pointer;">➤</button>
-  </form>
-</div>
-  <script src="script.js"></script>
+
+  <script>
+    // Inline quiz modal logic (open from slide Learn more and optional hero if present)
+    const quizModal = document.getElementById('quiz-modal');
+    const quizClose = document.getElementById('quiz-close');
+    const quizForm = document.getElementById('quiz-form');
+    const quizResults = document.getElementById('quiz-results');
+    const quizReset = document.getElementById('quiz-reset');
+    const openFromSlide = document.getElementById('open-quiz-from-slide');
+    const openFromHero = document.getElementById('open-quiz-modal'); // may not exist
+
+    function openQuiz() {
+      quizModal.classList.add('active');
+      quizModal.setAttribute('aria-hidden', 'false');
+    }
+    function closeQuiz() {
+      quizModal.classList.remove('active');
+      quizModal.setAttribute('aria-hidden', 'true');
+    }
+
+    if (openFromSlide) {
+      openFromSlide.addEventListener('click', (e) => { e.preventDefault(); openQuiz(); });
+    }
+    if (openFromHero) {
+      openFromHero.addEventListener('click', (e) => { e.preventDefault(); openQuiz(); });
+    }
+    quizClose.addEventListener('click', closeQuiz);
+    quizModal.addEventListener('click', (e) => { if (e.target === quizModal) closeQuiz(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && quizModal.classList.contains('active')) closeQuiz(); });
+
+    quizReset.addEventListener('click', () => { quizForm.reset(); quizResults.innerHTML = ''; });
+
+    function renderBioRecommendation() {
+      quizResults.innerHTML = `
+        <div class="recommendation-card">
+          <h4>Recommended Path: BSc with Biology</h4>
+          <p>Why this fits you:</p>
+          <ul>
+            <li>Strong interest/aptitude in Biology and Life Sciences.</li>
+            <li>Aligns with goals like higher studies, research, or healthcare careers.</li>
+          </ul>
+          <p style=\"margin-top:8px;\"><strong>Next steps:</strong> Shortlist BSc (Biology/Biotech/Microbiology) programs, build lab skills, and explore internships.</p>
+        </div>
+      `;
+    }
+
+    quizForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const level = document.getElementById('q-level').value;
+      const goal = document.getElementById('q-goal').value;
+      const subs = Array.from(document.querySelectorAll('input[name="q-sub"]:checked')).map(x => x.value);
+      const ints = Array.from(document.querySelectorAll('input[name="q-int"]:checked')).map(x => x.value);
+
+      if (!level || !goal || subs.length === 0 || ints.length === 0) {
+        quizResults.innerHTML = '<p style="color:#b00020;">Please answer all questions to see your result.</p>';
+        return;
+      }
+
+      let scoreBio = 0;
+      if (subs.includes('biology')) scoreBio += 3;
+      if (ints.includes('health')) scoreBio += 2;
+      if (ints.includes('research')) scoreBio += 1;
+      if (level.includes('Science')) scoreBio += 1;
+      if (goal === 'degree' || goal === 'mbbs') scoreBio += 1;
+
+      if (scoreBio >= 3) {
+        renderBioRecommendation();
+      } else {
+        quizResults.innerHTML = `
+          <div class="recommendation-card">
+            <h4>Suggestion: Explore BSc with Biology</h4>
+            <p>Your inputs hint at potential in life sciences. Consider Biology-related paths and compare with your other interests.</p>
+            <p style=\"margin-top:8px;\">You can retake the quiz and select Biology/Healthcare/Research if that resonates more.</p>
+          </div>
+        `;
+      }
+    });
+  </script>
+
+
 </body>
 </html>
